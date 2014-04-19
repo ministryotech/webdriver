@@ -7,7 +7,7 @@
     <authors>The Ministry of Technology</authors>
     <owners>The Ministry of Technology</owners>
     <licenseUrl>http://www.opensource.org/licenses/MIT</licenseUrl>
-    <projectUrl>https://bitbucket.org/ministryotech/ministry.webdriver</projectUrl>
+    <projectUrl>https://bitbucket.org/ministryotech/webdriver</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Fluent style wrapper structure on which to build a Selenium testing framework for .net. Sample code available with the source at https://bitbucket.org/ministryotech/ministry.webdriver</description>
     <copyright>Copyright 2014</copyright>
