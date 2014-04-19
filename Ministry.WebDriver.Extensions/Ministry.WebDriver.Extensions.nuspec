@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>The Ministry of Technology</authors>
+    <owners>The Ministry of Technology</owners>
+    <licenseUrl>http://www.opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://bitbucket.org/ministryotech/ministry.webdriver</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Fluent style wrapper structure on which to build a Selenium testing framework for .net. Sample code available with the source at https://bitbucket.org/ministryotech/ministry.webdriver</description>
+    <copyright>Copyright 2014</copyright>
+    <tags>Test Testing Framework Automation Selenium WebDriver UI</tags>
+    <releaseNotes>Updated for new Selenium versions</releaseNotes>
+    <dependencies>
+      <dependency id="Selenium.WebDriver" version="2.39.0" />
+      <dependency id="Selenium.Support" version="2.39.0" />
+      <dependency id="Selenium.WebDriver.ChromeDriver" version="2.8.0.0" />
+      <dependency id="Selenium.WebDriver.IEDriver" version="2.35.3.3" />
+      <dependency id="SimpleBrowser" version="0.5.12" />
+      <dependency id="SimpleBrowser.WebDriver" version="0.5.13" />
+    </dependencies>
+  </metadata>
+</package>
