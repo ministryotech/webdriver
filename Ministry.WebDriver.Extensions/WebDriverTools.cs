@@ -39,7 +39,7 @@ namespace Ministry.WebDriver.Extensions
             switch (testVal)
             {
                 case "internetexplorer":
-                case "emplorer":
+                case "explorer":
                 case "ie":
                 case "msie":
                 case "microsoftinternetexplorer":
