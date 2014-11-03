@@ -1,29 +1,33 @@
-# README #
+# Ministry.WebDriver.Extensions #
+This project is set up to provide a basic styled framework to build a page structured model for writing UI Automation tests against. The attached Google libraries act as samples to create a simple model to run tests against using the framework code in the main libraries. You can use these as a starting point.
 
-This README would normally document whatever steps are necessary to get your application up and running.
+## Initial Setup ##
+You will need to ensure the following for all the tests in the Extensions to pass...
 
-### What is this repository for? ###
+   1. Ensure you have IE, Firefox and Chrome installed.
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+   2. Ensure that 'Enable Protected Mode' is turned off in ALL zones in IE.
 
-### How do I get set up? ###
+## The Ministry of Technology Open Source Products ##
+Welcome to The Ministry of Technology open source products. All open source Ministry of Technology products are distributed under the MIT License for maximum re-usability. Details on more of our products and services can be found on our website at http://www.ministryotech.co.uk
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+Our other open source repositories can be found here...
+
+[https://bitbucket.org/ministryotech](https://bitbucket.org/ministryotech)
+
+[https://github.com/tiefling](https://github.com/tiefling)
+
+Most of our content is stored on BitBucket, but we also do some Umbraco related projects and with Umbraco itself hosted on GitHub it made sense to host those there too.
+
+### Where can I get it? ###
+You can download the package for this project from any of the following package managers...
+
+- **NUGET** - [https://www.nuget.org/packages/Ministry.WebDriver.Extensions](https://www.nuget.org/packages/Ministry.WebDriver.Extensions)
 
 ### Contribution guidelines ###
+If you would like to contribute to the project, please contact me.
 
-* Writing tests
-* Code review
-* Other guidelines
+The source code can be used in a simple text editor or within Visual Studio using NodeJS Tools for Visual Studio.
 
 ### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+* Keith Jackson - keith@ministryotech.co.uk
