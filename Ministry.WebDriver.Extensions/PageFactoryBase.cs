@@ -39,6 +39,11 @@ namespace Ministry.WebDriver.Extensions
         #endregion
 
         /// <summary>
+        /// Gets the site root.
+        /// </summary>
+        public string SiteRoot { get; set; }
+
+        /// <summary>
         /// Gets or sets the browser instance.
         /// </summary>
         public IWebDriver Browser { get; set; }

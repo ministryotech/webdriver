@@ -1,5 +1,6 @@
 ﻿using Ministry.WebDriver.Extensions;
 using NUnit.Framework;
+using OpenQA.Selenium;
 using WebDriver.Google.Search.UIAutomation;
 
 namespace WebDriver.Google.Search.UITests
@@ -47,7 +48,8 @@ namespace WebDriver.Google.Search.UITests
         {
             tm.Browser.Navigate().GoToPage(tm.Pages.Home);
             tm.Pages.Home.SearchBox.SendKeys(searchString);
-            tm.Pages.Home.SearchButton.Click();
+            tm.Pages.Home.SearchBox.SendKeys(Keys.Enter);
+            //tm.Pages.Home.SearchButton.Click();
             Assert.IsNotNull(tm.Pages.Home.ResultItem(searchString), "A result item was not found.");
         }
 

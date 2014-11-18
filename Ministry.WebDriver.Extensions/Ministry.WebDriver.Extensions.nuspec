@@ -12,7 +12,7 @@
     <description>Fluent style wrapper structure on which to build a Selenium testing framework for .net. Sample code available with the source at https://bitbucket.org/ministryotech/ministry.webdriver</description>
     <copyright>Copyright 2014</copyright>
     <tags>Test Testing Framework Automation Selenium WebDriver UI</tags>
-    <releaseNotes>Updated for new Selenium versions</releaseNotes>
+    <releaseNotes>Changes to SiteRoot</releaseNotes>
     <dependencies>
       <dependency id="Selenium.WebDriver" version="2.39.0" />
       <dependency id="Selenium.Support" version="2.39.0" />

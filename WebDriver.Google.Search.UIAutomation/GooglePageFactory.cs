@@ -31,7 +31,7 @@ namespace WebDriver.Google.Search.UIAutomation
         /// </summary>
         public override sealed void InitialisePageObjectTree()
         {
-            Home = new Home(Browser);
+            Home = new Home(Browser, SiteRoot);
         }
 
         #endregion

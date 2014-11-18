@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Policy;
 using OpenQA.Selenium;
 
 namespace Ministry.WebDriver.Extensions
@@ -15,10 +16,11 @@ namespace Ministry.WebDriver.Extensions
         /// Creates a test manager for a specific browser.
         /// </summary>
         /// <param name="browserName">The name of the browser to test with</param>
-        protected TestManagerBase(string browserName)
+        /// <param name="siteRoot">The site root.</param>
+        protected TestManagerBase(string browserName, string siteRoot = "")
         {
             Browser = WebDriverTools.GetBrowser(browserName);
-            Pages = new TPageFactory { Browser = Browser };
+            Pages = new TPageFactory { Browser = Browser, SiteRoot = siteRoot };
             Pages.InitialisePageObjectTree();
         }
 
@@ -26,19 +28,15 @@ namespace Ministry.WebDriver.Extensions
         /// Creates a test manager for a specific driver type.
         /// </summary>
         /// <param name="browser">The type of the web driver implementation to test with</param>
-        protected TestManagerBase(IWebDriver browser)
+        /// <param name="siteRoot">The site root.</param>
+        protected TestManagerBase(IWebDriver browser, string siteRoot = "")
         {
             Browser = browser;
-            Pages = new TPageFactory {Browser = browser};
+            Pages = new TPageFactory { Browser = browser, SiteRoot = siteRoot };
             Pages.InitialisePageObjectTree();
         }
 
         #endregion
-
-        /// <summary>
-        /// Gets the site root.
-        /// </summary>
-        public static string SiteRoot { get { return String.Empty; } }
 
         /// <summary>
         /// The browser driver object.

@@ -9,13 +9,6 @@ namespace WebDriver.Google.Search.UIAutomation
     /// </summary>
     public class TestManager : TestManagerBase<GooglePageFactory>
     {
-        /// <summary>
-        /// Gets the site root.
-        /// </summary>
-        public new static string SiteRoot
-        {
-            get { return "http://www.google.com/"; }
-        }
 
         #region | Construction |
 
@@ -23,7 +16,7 @@ namespace WebDriver.Google.Search.UIAutomation
         /// Creates a test manager.
         /// </summary>
         public TestManager()
-            : base(new StandardKernel(new TestInjectionModule()).Get<IWebDriver>())
+            : base(new StandardKernel(new TestInjectionModule()).Get<IWebDriver>(), "http://www.google.com/")
         { }
 
         /// <summary>
@@ -31,7 +24,7 @@ namespace WebDriver.Google.Search.UIAutomation
         /// </summary>
         /// <param name="browserName">The name of the browser to test with</param>
         public TestManager(string browserName)
-            : base(browserName)
+            : base(browserName, "http://www.google.com/")
         { }
 
         /// <summary>
@@ -39,7 +32,7 @@ namespace WebDriver.Google.Search.UIAutomation
         /// </summary>
         /// <param name="driver">The type of the web driver implementation to test with</param>
         public TestManager(IWebDriver driver)
-            : base(driver)
+            : base(driver, "http://www.google.com/")
         { }
 
         #endregion
