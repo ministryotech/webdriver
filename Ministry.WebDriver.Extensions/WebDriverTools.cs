@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
+using OpenQA.Selenium.PhantomJS;
 
 namespace Ministry.WebDriver.Extensions
 {
@@ -54,6 +57,10 @@ namespace Ministry.WebDriver.Extensions
                 case "google":
                 case "googlechrome":
                     return typeof(ChromeDriver);
+                case "phantom":
+                case "ghost":
+                case "phantomjs":
+                    return typeof (PhantomJSDriver);
                 default:
                     throw new ArgumentOutOfRangeException("browserName", "The browser '" + browserName + "' is not supported by WebDriver");
             }
@@ -121,6 +128,48 @@ namespace Ministry.WebDriver.Extensions
             } 
 
             throw new NoSuchElementException("WebDriver timed out while waiting for element '" + elementSearchDefinition + "'");
+        }
+
+        /// <summary>
+        /// Suspends the browser until the given elements exist and are visible unless the timeout value expires.
+        /// </summary>
+        /// <param name="browser">The browser instance to wait.</param>
+        /// <param name="elementSearchDefinition">The criteria used tio locate the element to wait for.</param>
+        /// <param name="millisecondsTimeout">The period at which the wait will throw an exception.</param>
+        /// <returns>The element searched for.</returns>
+        /// <exception cref="OpenQA.Selenium.WebDriverException">Thrown when the items are not found in the given time period.</exception>
+        /// <exception cref="System.ArgumentNullException">The parameter is null.</exception>
+        public static IList<IWebElement> FindElements(this IWebDriver browser, By elementSearchDefinition, int millisecondsTimeout)
+        {
+            if (browser == null) throw new ArgumentNullException("browser");
+            if (elementSearchDefinition == null) throw new ArgumentNullException("elementSearchDefinition");
+
+            var currentPeriod = 0;
+            const int waitPeriod = 500;
+
+            while (currentPeriod < millisecondsTimeout)
+            {
+                try
+                {
+                    var elementsToWaitFor = browser.FindElements(elementSearchDefinition);
+
+                    if (elementsToWaitFor.Any())
+                    {
+                        var displayedItems = (from e in elementsToWaitFor
+                                              where e.Displayed
+                                              select e).ToList();
+                        if (displayedItems.Any()) return displayedItems;
+                    }
+
+                    currentPeriod = WaitForElement(millisecondsTimeout, currentPeriod, waitPeriod);
+                }
+                catch (WebDriverException)
+                {
+                    currentPeriod = WaitForElement(millisecondsTimeout, currentPeriod, waitPeriod);
+                }
+            }
+
+            throw new NoSuchElementException("WebDriver timed out while waiting for elements '" + elementSearchDefinition + "'");
         }
 
 

@@ -54,6 +54,9 @@ namespace Ministry.WebDriver.Extensions.Tests
         [TestCase("Google Chrome", "OpenQA.Selenium.Chrome.ChromeDriver")]
         [TestCase("Google", "OpenQA.Selenium.Chrome.ChromeDriver")]
         [TestCase("Chrome", "OpenQA.Selenium.Chrome.ChromeDriver")]
+        [TestCase("Phantom", "OpenQA.Selenium.PhantomJS.PhantomJSDriver")]
+        [TestCase("Ghost", "OpenQA.Selenium.PhantomJS.PhantomJSDriver")]
+        [TestCase("PhantomJS", "OpenQA.Selenium.PhantomJS.PhantomJSDriver")]
         public void TestThatICanObtainAWebDriverInstanceFromADescriptiveBrowserString(string browserName, string objectType)
         {
             tm = new TestManager(browserName);
@@ -150,16 +153,17 @@ namespace Ministry.WebDriver.Extensions.Tests
         [Test]
         [Category("Google Tests")]
         [Category("Element Tests")]
-        [TestCase("InternetExplorer")]
         [TestCase("Firefox")]
         [TestCase("Chrome")]
+        [TestCase("PhantomJS")]
+        //[TestCase("InternetExplorer")]
         public void TestThatFindingAnElementWithALongTimeoutWorksInAllSupportedBrowsers(string browserName)
         {
             tm = new TestManager(browserName);
             tm.Browser.Navigate().GoToPage(tm.Pages.Home);
             tm.Pages.Home.SearchBox.SendKeys("Cheese");
             tm.Pages.Home.SearchButton.Click();
-            var expectedResultItem = tm.Browser.FindElement(By.XPath("//li/div/h3/a[contains(text(), 'British')]"), 5000);
+            var expectedResultItem = tm.Browser.FindElement(By.Name("btnG"), 1000);
             Assert.IsNotNull(expectedResultItem, "The expected result item was not found.");
         }
 

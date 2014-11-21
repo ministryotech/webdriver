@@ -1,6 +1,9 @@
-﻿using Ministry.WebDriver.Extensions;
+﻿using System.Linq;
+using System.Runtime.Remoting.Messaging;
+using Ministry.WebDriver.Extensions;
 using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.PhantomJS;
 using WebDriver.Google.Search.UIAutomation;
 
 namespace WebDriver.Google.Search.UITests
@@ -8,7 +11,8 @@ namespace WebDriver.Google.Search.UITests
     [Category("Google Tests")]
     [TestFixture("Chrome")]
     [TestFixture("Firefox")]
-    [TestFixture("IE")]
+    [TestFixture("PhantomJS")]
+    //[TestFixture("IE")] - IE is currently broken
     public class SearchTests
     {
 
@@ -35,6 +39,7 @@ namespace WebDriver.Google.Search.UITests
             {
                 tm.Browser.Quit();
             }
+            // ReSharper disable once EmptyGeneralCatchClause
             catch { }
         }
 
@@ -49,8 +54,19 @@ namespace WebDriver.Google.Search.UITests
             tm.Browser.Navigate().GoToPage(tm.Pages.Home);
             tm.Pages.Home.SearchBox.SendKeys(searchString);
             tm.Pages.Home.SearchBox.SendKeys(Keys.Enter);
-            //tm.Pages.Home.SearchButton.Click();
-            Assert.IsNotNull(tm.Pages.Home.ResultItem(searchString), "A result item was not found.");
+            tm.Pages.Home.SearchButton.Click();
+
+            if (tm.Browser.GetType() == typeof (PhantomJSDriver))
+            {
+                // PhantomJS and Google do NOT get along.
+                Assert.That(tm.Browser.Title.Contains(searchString));
+            }
+            else
+            {
+                Assert.That(tm.Pages.Home.HasResults, "No results were loaded");
+                Assert.That(tm.Pages.Home.HasResultsFor(searchString),
+                    "The results found do not appear to be for the provided search query");
+            }
         }
 
     }

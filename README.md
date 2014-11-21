@@ -8,6 +8,9 @@ You will need to ensure the following for all the tests in the Extensions to pas
 
    2. Ensure that 'Enable Protected Mode' is turned off in ALL zones in IE.
 
+## PhantomJS Support ##
+This has now been added but it's quality is questionable to me. I was unable to get it to accurately test data from Google and had to set up an alternative to check the results in the sample tests in the repository.
+
 ## The Ministry of Technology Open Source Products ##
 Welcome to The Ministry of Technology open source products. All open source Ministry of Technology products are distributed under the MIT License for maximum re-usability. Details on more of our products and services can be found on our website at http://www.ministryotech.co.uk
 
