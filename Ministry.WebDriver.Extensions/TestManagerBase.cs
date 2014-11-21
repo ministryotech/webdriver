@@ -1,6 +1,4 @@
-﻿using System;
-using System.Security.Policy;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 
 namespace Ministry.WebDriver.Extensions
 {

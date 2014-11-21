@@ -24,7 +24,16 @@ namespace Ministry.WebDriver.Extensions
         /// <returns>The implementation of IWebDriver for the specified string.</returns>
         public static IWebDriver GetBrowser(string browserName)
         {
-            return (IWebDriver)Activator.CreateInstance(GetBrowserType(browserName));
+            var browserType = GetBrowserType(browserName);
+            if (browserType != typeof (PhantomJSDriver))
+                return (IWebDriver) Activator.CreateInstance(GetBrowserType(browserName));
+
+            var pjsService = PhantomJSDriverService.CreateDefaultService();
+            pjsService.IgnoreSslErrors = true;
+            pjsService.LoadImages = false;
+            pjsService.ProxyType = "none";
+
+            return new PhantomJSDriver(pjsService);
         }
 
         /// <summary>

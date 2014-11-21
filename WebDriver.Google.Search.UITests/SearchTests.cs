@@ -12,7 +12,7 @@ namespace WebDriver.Google.Search.UITests
     [TestFixture("Chrome")]
     [TestFixture("Firefox")]
     [TestFixture("PhantomJS")]
-    //[TestFixture("IE")] - IE is currently broken
+    [TestFixture("IE")]
     public class SearchTests
     {
 
@@ -56,7 +56,7 @@ namespace WebDriver.Google.Search.UITests
             tm.Pages.Home.SearchBox.SendKeys(Keys.Enter);
             tm.Pages.Home.SearchButton.Click();
 
-            if (tm.Browser.GetType() == typeof (PhantomJSDriver))
+            if (tm.Browser.GetType() == typeof(PhantomJSDriver))
             {
                 // PhantomJS and Google do NOT get along.
                 Assert.That(tm.Browser.Title.Contains(searchString));

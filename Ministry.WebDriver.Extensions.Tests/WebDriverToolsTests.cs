@@ -139,20 +139,6 @@ namespace Ministry.WebDriver.Extensions.Tests
         [Test]
         [Category("Google Tests")]
         [Category("Element Tests")]
-        [ExpectedException(typeof(NoSuchElementException))]
-        public void TestThatFindingAnElementWithoutATimeoutThrowsAnExceptionInFirefox()
-        {
-            tm = new TestManager("Firefox");
-            tm.Browser.Navigate().GoToPage(tm.Pages.Home);
-            tm.Pages.Home.SearchBox.SendKeys("Cheese");
-            tm.Pages.Home.SearchButton.Click();
-            var expectedResultItem = tm.Browser.FindElement(By.XPath("//li/div/h3/a[contains(text(), 'British')]"));
-            Assert.IsNotNull(expectedResultItem, "The expected result item was not found.");
-        }
-
-        [Test]
-        [Category("Google Tests")]
-        [Category("Element Tests")]
         [TestCase("Firefox")]
         [TestCase("Chrome")]
         [TestCase("PhantomJS")]
