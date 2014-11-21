@@ -156,7 +156,7 @@ namespace Ministry.WebDriver.Extensions.Tests
         [TestCase("Firefox")]
         [TestCase("Chrome")]
         [TestCase("PhantomJS")]
-        //[TestCase("InternetExplorer")]
+        [TestCase("InternetExplorer")]
         public void TestThatFindingAnElementWithALongTimeoutWorksInAllSupportedBrowsers(string browserName)
         {
             tm = new TestManager(browserName);
