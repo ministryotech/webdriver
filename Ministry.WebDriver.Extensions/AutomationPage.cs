@@ -2,7 +2,6 @@
 
 namespace Ministry.WebDriver.Extensions
 {
-
     /// <summary>
     /// A basic definition for a page.
     /// </summary>
@@ -30,6 +29,5 @@ namespace Ministry.WebDriver.Extensions
         /// Gets the browser instance passed into the page.
         /// </summary>
         protected IWebDriver Browser { get; private set; } 
-
     }
 }
