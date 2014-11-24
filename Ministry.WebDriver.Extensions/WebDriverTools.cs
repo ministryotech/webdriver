@@ -20,20 +20,59 @@ namespace Ministry.WebDriver.Extensions
         /// Obtains an IWebDriver implementation by providing a descriptive string.
         /// </summary>
         /// <param name="browserName">The name of the browser to return.</param>
+        /// <param name="options">The options for browser usage.</param>
+        /// <returns>
+        /// The implementation of IWebDriver for the specified string.
+        /// </returns>
         /// <exception cref="System.ArgumentNullException">The parameter is null.</exception>
-        /// <returns>The implementation of IWebDriver for the specified string.</returns>
-        public static IWebDriver GetBrowser(string browserName)
+        public static IWebDriver GetBrowser(string browserName, BrowserOptions options = null)
         {
             var browserType = GetBrowserType(browserName);
-            if (browserType != typeof (PhantomJSDriver))
-                return (IWebDriver) Activator.CreateInstance(GetBrowserType(browserName));
+            if (browserType == typeof (PhantomJSDriver))
+            {
+                var pjsService = PhantomJSDriverService.CreateDefaultService();
 
-            var pjsService = PhantomJSDriverService.CreateDefaultService();
-            pjsService.IgnoreSslErrors = true;
-            pjsService.LoadImages = false;
-            pjsService.ProxyType = "none";
+                if (options != null)
+                {
+                    pjsService.IgnoreSslErrors = options.IgnoreSslErrors;
+                    pjsService.LoadImages = options.LoadImages;
+                }
+                else
+                {
+                    pjsService.IgnoreSslErrors = true;
+                    pjsService.LoadImages = false;
+                }
+                pjsService.ProxyType = "none";
 
-            return new PhantomJSDriver(pjsService);
+                return new PhantomJSDriver(pjsService);
+            }
+            if (browserType == typeof(InternetExplorerDriver))
+            {
+                var ieService = InternetExplorerDriverService.CreateDefaultService();
+                ieService.HideCommandPromptWindow = true;
+
+                var ieOptions = new InternetExplorerOptions();
+
+                return new InternetExplorerDriver(ieService, ieOptions);
+            }
+            if (browserType == typeof(FirefoxDriver))
+            {
+                return new FirefoxDriver();
+            }
+            if (browserType == typeof(ChromeDriver))
+            {
+                var chromeService = ChromeDriverService.CreateDefaultService();
+                chromeService.HideCommandPromptWindow = true;
+
+                var chromeOptions = new ChromeOptions
+                {
+                    LeaveBrowserRunning = false
+                };
+
+                return new ChromeDriver(chromeService, chromeOptions);
+            }
+
+            throw new ArgumentOutOfRangeException("browserName", "The browser '" + browserName + "' is not supported by WebDriver");
         }
 
         /// <summary>
