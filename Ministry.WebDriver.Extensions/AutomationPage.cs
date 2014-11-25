@@ -5,7 +5,7 @@ namespace Ministry.WebDriver.Extensions
     /// <summary>
     /// A basic definition for a page.
     /// </summary>
-    public abstract class AutomationPage
+    public abstract class AutomationPage : AutomationBase
     {
         #region | Construction |
 
@@ -14,9 +14,8 @@ namespace Ministry.WebDriver.Extensions
         /// </summary>
         /// <param name="browser">The web driver implementation to automate with.</param>
         protected AutomationPage(IWebDriver browser)
-        {
-            Browser = browser;
-        }
+            : base(browser)
+        { }
 
         #endregion
 
@@ -24,10 +23,5 @@ namespace Ministry.WebDriver.Extensions
         /// Gets the URL linked to this 'page'.
         /// </summary>
         public abstract string Url { get; }
-
-        /// <summary>
-        /// Gets the browser instance passed into the page.
-        /// </summary>
-        protected IWebDriver Browser { get; private set; } 
     }
 }

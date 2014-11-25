@@ -59,6 +59,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutomationBase.cs" />
     <Compile Include="AutomationComponent.cs" />
     <Compile Include="AutomationPage.cs" />
     <Compile Include="BrowserOptions.cs" />

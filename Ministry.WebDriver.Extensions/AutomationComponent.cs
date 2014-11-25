@@ -9,7 +9,7 @@ namespace Ministry.WebDriver.Extensions
     /// <remarks>
     /// This is useful for elements shared between pages, such as headers, footers and sidebars.
     /// </remarks>
-    public abstract class AutomationComponent
+    public abstract class AutomationComponent : AutomationBase
     {
         #region | Construction |
 
@@ -18,16 +18,10 @@ namespace Ministry.WebDriver.Extensions
         /// </summary>
         /// <param name="browser">The web driver implementation to automate with.</param>
         protected AutomationComponent(IWebDriver browser)
-        {
-            Browser = browser;
-        }
+            : base(browser)
+        { }
 
         #endregion
-
-        /// <summary>
-        /// Gets the browser instance passed into the page.
-        /// </summary>
-        protected IWebDriver Browser { get; private set; }
 
         /// <summary>
         /// Gets the container element.
