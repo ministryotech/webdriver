@@ -1,5 +1,4 @@
-﻿using System;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 
 namespace Ministry.WebDriver.Extensions
 {
@@ -9,7 +8,29 @@ namespace Ministry.WebDriver.Extensions
     /// <remarks>
     /// This is useful for elements shared between pages, such as headers, footers and sidebars.
     /// </remarks>
-    public abstract class AutomationComponent : AutomationBase
+    public interface IAutomationComponent : IElementInterrogator
+    {
+        /// <summary>
+        /// Gets the container element.
+        /// </summary>
+        IWebElement ContainerElement { get; }
+
+        /// <summary>
+        /// Gets a value indicating whether this instance is rendered.
+        /// </summary>
+        /// <value>
+        /// <c>true</c> if this instance is rendered; otherwise, <c>false</c>.
+        /// </value>
+        bool IsRendered { get; }
+    }
+
+    /// <summary>
+    /// A basic definition for a component of a page with its own class.
+    /// </summary>
+    /// <remarks>
+    /// This is useful for elements shared between pages, such as headers, footers and sidebars.
+    /// </remarks>
+    public abstract class AutomationComponent : AutomationBase, IAutomationComponent
     {
         #region | Construction |
 

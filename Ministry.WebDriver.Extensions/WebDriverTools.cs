@@ -120,7 +120,7 @@ namespace Ministry.WebDriver.Extensions
         /// <param name="navigation">The navigation item to navigate with.</param>
         /// <param name="page">The page to navigate to.</param>
         /// <exception cref="System.ArgumentNullException">The parameter is null.</exception>
-        public static void GoToPage(this INavigation navigation, AutomationPage page)
+        public static void GoToPage(this INavigation navigation, IAutomationPage page)
         {
             if (navigation == null) throw new ArgumentNullException("navigation");
             if (page == null) throw new ArgumentNullException("page");
@@ -149,7 +149,7 @@ namespace Ministry.WebDriver.Extensions
         /// </summary>
         /// <param name="browser">The browser.</param>
         /// <param name="page">The page.</param>
-        public static void NavigateTo(this IWebDriver browser, AutomationPage page)
+        public static void NavigateTo(this IWebDriver browser, IAutomationPage page)
         {
             browser.Navigate().GoToPage(page);
 
@@ -236,6 +236,54 @@ namespace Ministry.WebDriver.Extensions
         }
 
         /// <summary>
+        /// Suspends the browser until the given element exists and is visible unless the timeout value expires.
+        /// </summary>
+        /// <param name="parentElement">The browser instance to wait.</param>
+        /// <param name="elementSearchDefinition">The criteria used tio locate the element to wait for.</param>
+        /// <param name="millisecondsTimeout">The period at which the wait will throw an exception.</param>
+        /// <param name="requireVisible">if set to <c>true</c> requires that the elements are visible.</param>
+        /// <returns>
+        /// The element searched for.
+        /// </returns>
+        /// <exception cref="System.ArgumentNullException">The parameter is null.</exception>
+        /// <exception cref="OpenQA.Selenium.NoSuchElementException">WebDriver timed out while waiting for element ' + elementSearchDefinition + '</exception>
+        /// <exception cref="OpenQA.Selenium.WebDriverException">Thrown when the item is not found in the given time period.</exception>
+        public static IWebElement FindElement(this IWebElement parentElement, By elementSearchDefinition, int millisecondsTimeout, bool requireVisible = false)
+        {
+            if (parentElement == null) throw new ArgumentNullException("parentElement");
+            if (elementSearchDefinition == null) throw new ArgumentNullException("elementSearchDefinition");
+
+            var currentPeriod = 0;
+            const int waitPeriod = 500;
+            WebDriverException lastWex = null;
+
+            while (currentPeriod < millisecondsTimeout)
+            {
+                try
+                {
+                    var elementToWaitFor = parentElement.FindElement(elementSearchDefinition);
+
+                    if (elementToWaitFor != null && (!requireVisible || elementToWaitFor.Displayed))
+                        return elementToWaitFor;
+
+                    currentPeriod = WaitForElement(millisecondsTimeout, currentPeriod, waitPeriod);
+                }
+                catch (WebDriverException wex)
+                {
+                    currentPeriod = WaitForElement(millisecondsTimeout, currentPeriod, waitPeriod);
+                    lastWex = wex;
+                }
+            }
+
+            if (lastWex != null)
+            {
+                throw new NoSuchElementException(
+                    "WebDriver timed out while waiting for element '" + elementSearchDefinition + "'", lastWex);
+            }
+            throw new NoSuchElementException("WebDriver timed out while waiting for element '" + elementSearchDefinition + "'");
+        }
+
+        /// <summary>
         /// Suspends the browser until the given elements exist and are visible unless the timeout value expires.
         /// </summary>
         /// <param name="browser">The browser instance to wait.</param>
@@ -287,6 +335,65 @@ namespace Ministry.WebDriver.Extensions
                 }
             }
 
+            if (lastWex != null)
+            {
+                throw new NoSuchElementException(
+                    "WebDriver timed out while waiting for element '" + elementSearchDefinition + "'", lastWex);
+            }
+            throw new NoSuchElementException("WebDriver timed out while waiting for elements '" + elementSearchDefinition + "'");
+        }
+
+        /// <summary>
+        /// Suspends the browser until the given elements exist and are visible unless the timeout value expires.
+        /// </summary>
+        /// <param name="parentElement">The browser instance to wait.</param>
+        /// <param name="elementSearchDefinition">The criteria used tio locate the element to wait for.</param>
+        /// <param name="millisecondsTimeout">The period at which the wait will throw an exception.</param>
+        /// <param name="requireVisible">if set to <c>true</c> requires that the elements are visible.</param>
+        /// <returns>
+        /// The element searched for.
+        /// </returns>
+        /// <exception cref="System.ArgumentNullException">The parameter is null.</exception>
+        /// <exception cref="OpenQA.Selenium.NoSuchElementException">WebDriver timed out while waiting for elements ' + elementSearchDefinition + '</exception>
+        /// <exception cref="OpenQA.Selenium.WebDriverException">Thrown when the items are not found in the given time period.</exception>
+        public static IList<IWebElement> FindElements(this IWebElement parentElement, By elementSearchDefinition, int millisecondsTimeout, bool requireVisible = false)
+        {
+            if (parentElement == null) throw new ArgumentNullException("parentElement");
+            if (elementSearchDefinition == null) throw new ArgumentNullException("elementSearchDefinition");
+
+            var currentPeriod = 0;
+            const int waitPeriod = 500;
+            WebDriverException lastWex = null;
+
+            while (currentPeriod < millisecondsTimeout)
+            {
+                try
+                {
+                    var elementsToWaitFor = parentElement.FindElements(elementSearchDefinition);
+
+                    if (elementsToWaitFor.Any())
+                    {
+                        if (requireVisible)
+                        {
+                            var displayedItems = (from e in elementsToWaitFor
+                                                  where e.Displayed
+                                                  select e).ToList();
+                            if (displayedItems.Any()) return displayedItems;
+                        }
+                        else
+                        {
+                            return elementsToWaitFor;
+                        }
+                    }
+
+                    currentPeriod = WaitForElement(millisecondsTimeout, currentPeriod, waitPeriod);
+                }
+                catch (WebDriverException wex)
+                {
+                    currentPeriod = WaitForElement(millisecondsTimeout, currentPeriod, waitPeriod);
+                    lastWex = wex;
+                }
+            }
 
             if (lastWex != null)
             {

@@ -63,6 +63,7 @@
     <Compile Include="AutomationComponent.cs" />
     <Compile Include="AutomationPage.cs" />
     <Compile Include="BrowserOptions.cs" />
+    <Compile Include="IElementInterrogator.cs" />
     <Compile Include="PageFactoryBase.cs" />
     <Compile Include="TestManagerBase.cs" />
     <Compile Include="WebDriverTools.cs" />

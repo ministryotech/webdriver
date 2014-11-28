@@ -5,7 +5,18 @@ namespace Ministry.WebDriver.Extensions
     /// <summary>
     /// A basic definition for a page.
     /// </summary>
-    public abstract class AutomationPage : AutomationBase
+    public interface IAutomationPage : IElementInterrogator
+    {
+        /// <summary>
+        /// Gets the URL linked to this 'page'.
+        /// </summary>
+        string Url { get; }
+    }
+
+    /// <summary>
+    /// A basic definition for a page.
+    /// </summary>
+    public abstract class AutomationPage : AutomationBase, IAutomationPage
     {
         #region | Construction |
 
