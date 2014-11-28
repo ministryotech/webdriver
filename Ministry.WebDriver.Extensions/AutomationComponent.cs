@@ -69,5 +69,21 @@ namespace Ministry.WebDriver.Extensions
                 }
             }
         }
+
+        /// <summary>
+        /// Gets a value indicating whether this <see cref="AutomationComponent"/> is displayed.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if displayed; otherwise, <c>false</c>.
+        /// </value>
+        public bool Displayed { get { return ContainerElement.Displayed; } }
+
+        /// <summary>
+        /// Gets a value indicating whether this <see cref="AutomationComponent"/> is enabled.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if enabled; otherwise, <c>false</c>.
+        /// </value>
+        public bool Enabled { get { return ContainerElement.Enabled; } }
     }
 }
