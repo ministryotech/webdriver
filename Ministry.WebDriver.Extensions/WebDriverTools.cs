@@ -31,17 +31,11 @@ namespace Ministry.WebDriver.Extensions
             if (browserType == typeof (PhantomJSDriver))
             {
                 var pjsService = PhantomJSDriverService.CreateDefaultService();
+                if (options == null)
+                    options = new BrowserOptions();
 
-                if (options != null)
-                {
-                    pjsService.IgnoreSslErrors = options.IgnoreSslErrors;
-                    pjsService.LoadImages = options.LoadImages;
-                }
-                else
-                {
-                    pjsService.IgnoreSslErrors = true;
-                    pjsService.LoadImages = false;
-                }
+                pjsService.IgnoreSslErrors = options.IgnoreSslErrors;
+                pjsService.LoadImages = options.LoadImages;
                 pjsService.ProxyType = "none";
 
                 return new PhantomJSDriver(pjsService);
@@ -403,6 +397,43 @@ namespace Ministry.WebDriver.Extensions
             throw new NoSuchElementException("WebDriver timed out while waiting for elements '" + elementSearchDefinition + "'");
         }
 
+        /// <summary>
+        /// Gets the inner HTML content value of the element whether visible or not..
+        /// </summary>
+        /// <param name="element">The element.</param>
+        /// <returns>The text.</returns>
+        public static string InnerHtml(this IWebElement element)
+        {
+            return element.GetAttribute("innerHTML");
+        }
+
+        /// <summary>
+        /// Gets a collection of the Inner HTML for a selection of elements.
+        /// </summary>
+        /// <param name="elements">The elements.</param>
+        /// <param name="trimmed">if set to <c>true</c> trim the text.</param>
+        /// <returns></returns>
+        public static IList<String> InnerHtmlList(this IList<IWebElement> elements, bool trimmed = false)
+        {
+            var list = (from el in elements
+                        select el.InnerHtml()).ToList();
+
+            return trimmed ? list.Select(item => item.Trim()).ToList() : list;
+        }
+
+        /// <summary>
+        /// Gets a collection of the Inner HTML for a selection of elements.
+        /// </summary>
+        /// <param name="elements">The elements.</param>
+        /// <param name="trimmed">if set to <c>true</c> trim the text.</param>
+        /// <returns></returns>
+        public static IQueryable<String> InnerHtmlList(this IQueryable<IWebElement> elements, bool trimmed = false)
+        {
+            var list = (from el in elements
+                        select el.InnerHtml());
+
+            return trimmed ? list.Select(item => item.Trim()) : list;
+        }
 
         #region | Private Methods |
 

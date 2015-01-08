@@ -12,7 +12,7 @@
     <description>Fluent style wrapper structure on which to build a Selenium testing framework for .net. Sample code available with the source at https://bitbucket.org/ministryotech/ministry.webdriver</description>
     <copyright>Copyright 2014</copyright>
     <tags>Test Testing Framework Automation Selenium WebDriver UI</tags>
-    <releaseNotes>Exposed Displayed and Enabled in AutomationComponent from the underlying ContainerElement.</releaseNotes>
+    <releaseNotes>Fixed bug with standard PhantomJS setup that was causing images not to load by default.</releaseNotes>
     <dependencies>
       <dependency id="Selenium.WebDriver" version="2.44.0" />
       <dependency id="Selenium.Support" version="2.44.0" />
