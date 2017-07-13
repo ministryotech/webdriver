@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.6
+MinimumVisualStudioVersion = 15.0.0.0
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{639A4228-C913-4634-B58B-60A484692395}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{9A664D0C-FBEC-4DA7-B300-D8B6972AE742}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{29AC8347-9FAA-4C2D-AB76-3FC9C54C7E71}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		package.json = package.json
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebDriver.Extensions", "src\WebDriver.Extensions\WebDriver.Extensions.csproj", "{FABFAFCD-135F-4C15-90B7-AE0DDD8E9A32}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebDriver.Extensions.Tests", "test\WebDriver.Extensions.Tests\WebDriver.Extensions.Tests.csproj", "{0DC1FA15-AA15-4F4D-B666-570C91A53485}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample", "sample", "{F25796C0-966E-493C-8C5F-466750FE987D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Google.Search.UIAutomation", "sample\Google.Search.UIAutomation\Google.Search.UIAutomation.csproj", "{0391FC43-AC5E-456A-AA0A-C35C0E644FA7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Google.Search.UITests", "sample\Google.Search.UITests\Google.Search.UITests.csproj", "{0DDECB1C-E8D9-42C9-9474-244A50AF551A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebDriver.Extensions.UITests", "test\WebDriver.Extensions.UITests\WebDriver.Extensions.UITests.csproj", "{7DDF4708-861C-4C0E-83DF-9B0A0781DF06}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FABFAFCD-135F-4C15-90B7-AE0DDD8E9A32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FABFAFCD-135F-4C15-90B7-AE0DDD8E9A32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FABFAFCD-135F-4C15-90B7-AE0DDD8E9A32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FABFAFCD-135F-4C15-90B7-AE0DDD8E9A32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DC1FA15-AA15-4F4D-B666-570C91A53485}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DC1FA15-AA15-4F4D-B666-570C91A53485}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DC1FA15-AA15-4F4D-B666-570C91A53485}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DC1FA15-AA15-4F4D-B666-570C91A53485}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0391FC43-AC5E-456A-AA0A-C35C0E644FA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0391FC43-AC5E-456A-AA0A-C35C0E644FA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0391FC43-AC5E-456A-AA0A-C35C0E644FA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0391FC43-AC5E-456A-AA0A-C35C0E644FA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DDECB1C-E8D9-42C9-9474-244A50AF551A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DDECB1C-E8D9-42C9-9474-244A50AF551A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DDECB1C-E8D9-42C9-9474-244A50AF551A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DDECB1C-E8D9-42C9-9474-244A50AF551A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DDF4708-861C-4C0E-83DF-9B0A0781DF06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DDF4708-861C-4C0E-83DF-9B0A0781DF06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DDF4708-861C-4C0E-83DF-9B0A0781DF06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DDF4708-861C-4C0E-83DF-9B0A0781DF06}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FABFAFCD-135F-4C15-90B7-AE0DDD8E9A32} = {639A4228-C913-4634-B58B-60A484692395}
+		{0DC1FA15-AA15-4F4D-B666-570C91A53485} = {9A664D0C-FBEC-4DA7-B300-D8B6972AE742}
+		{0391FC43-AC5E-456A-AA0A-C35C0E644FA7} = {F25796C0-966E-493C-8C5F-466750FE987D}
+		{0DDECB1C-E8D9-42C9-9474-244A50AF551A} = {F25796C0-966E-493C-8C5F-466750FE987D}
+		{7DDF4708-861C-4C0E-83DF-9B0A0781DF06} = {9A664D0C-FBEC-4DA7-B300-D8B6972AE742}
+	EndGlobalSection
+EndGlobal

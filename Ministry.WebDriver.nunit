@@ -1,8 +1,0 @@
-﻿<NUnitProject>
-  <Settings activeconfig="Debug" />
-  <Config name="Debug" binpathtype="Auto">
-    <assembly path="Ministry.WebDriver.Extensions.Tests\bin\Debug\WebDriver.Extensions.Tests.dll" />
-    <assembly path="WebDriver.Google.Search.UITests\bin\Debug\WebDriver.Google.Search.UITests.dll" />
-  </Config>
-  <Config name="Release" binpathtype="Auto" />
-</NUnitProject>

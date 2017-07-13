@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netcoreapp1.0;netcoreapp1.1;net45;net462</TargetFrameworks>
+    <Authors>Keith Jackson</Authors>
+    <Company>The Ministry of Technology</Company>
+    <Description>A basic styled framework to build a structured page or component model for writing UI Automation tests.</Description>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <Copyright>2017 Minotech Ltd.</Copyright>
+    <RepositoryUrl>https://github.com/ministryotech/webdriver.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <FileVersion>2.0.0.0</FileVersion>
+    <Version>2.0.0</Version>
+    <PreBuildEvent></PreBuildEvent>
+    <PostBuildEvent></PostBuildEvent>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CoreCompat.Selenium.WebDriver" Version="3.4.0-beta001" />
+    <PackageReference Include="PhantomJS" Version="2.1.1" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="2.30.0.1" />
+    <PackageReference Include="Selenium.WebDriver.GeckoDriver" Version="0.18.0" />
+    <PackageReference Include="Selenium.WebDriver.IEDriver" Version="3.4.0" />
+    <PackageReference Include="Selenium.WebDriver.MicrosoftWebDriver" Version="10.0.15063" />
+    <PackageReference Include="Selenium.WebDriver.PhantomJS" Version="1.0.0" />
+    <PackageReference Include="System.Linq.Queryable" Version="4.3.0" />
+  </ItemGroup>
+
+</Project>
