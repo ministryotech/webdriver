@@ -31,9 +31,6 @@ You will need to make sure that your UI Tests library includes references to any
 - Firefox: Selenium.WebDriver.GeckoDriver v0.18.0
 - Edge: Selenium.WebDriver.MicrosoftWebDriver v10.0.15063
 
-## PhantomJS Support ##
-This has now been added but it's quality is questionable to me. I was unable to get it to accurately test data from Google and had to set up an alternative to check the results in the sample tests in the repository.
-
 # Useful Links #
 The following links relate to all of the key elements within the project technology stack...
 - [dotnet Core](https://www.microsoft.com/net/core)
