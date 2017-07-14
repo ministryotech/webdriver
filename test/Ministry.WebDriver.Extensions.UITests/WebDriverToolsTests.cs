@@ -57,8 +57,8 @@ namespace Ministry.WebDriver.Extensions.UITests
         }
 
         [Theory]
-        [InlineData("Microsoft Edge", "OpenQA.Selenium.WindowsWebDriver")]
-        [InlineData("Edge", "OpenQA.Selenium.WindowsWebDriver")]
+        [InlineData("Microsoft Edge", "OpenQA.Selenium.Edge.EdgeDriver")]
+        [InlineData("Edge", "OpenQA.Selenium.Edge.EdgeDriver")]
         public void TestThatICanObtainAWebDriverInstanceForEdge(string browserName, string objectType)
         {
             tm = new TestManager(browserName);
