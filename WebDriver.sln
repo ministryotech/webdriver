@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.6
+VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 15.0.0.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{639A4228-C913-4634-B58B-60A484692395}"
 EndProject
@@ -13,9 +13,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		package.json = package.json
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebDriver.Extensions", "src\WebDriver.Extensions\WebDriver.Extensions.csproj", "{FABFAFCD-135F-4C15-90B7-AE0DDD8E9A32}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ministry.WebDriver.Extensions", "src\Ministry.WebDriver.Extensions\Ministry.WebDriver.Extensions.csproj", "{FABFAFCD-135F-4C15-90B7-AE0DDD8E9A32}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebDriver.Extensions.Tests", "test\WebDriver.Extensions.Tests\WebDriver.Extensions.Tests.csproj", "{0DC1FA15-AA15-4F4D-B666-570C91A53485}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ministry.WebDriver.Extensions.Tests", "test\Ministry.WebDriver.Extensions.Tests\Ministry.WebDriver.Extensions.Tests.csproj", "{0DC1FA15-AA15-4F4D-B666-570C91A53485}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample", "sample", "{F25796C0-966E-493C-8C5F-466750FE987D}"
 EndProject
@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Google.Search.UIAutomation"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Google.Search.UITests", "sample\Google.Search.UITests\Google.Search.UITests.csproj", "{0DDECB1C-E8D9-42C9-9474-244A50AF551A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebDriver.Extensions.UITests", "test\WebDriver.Extensions.UITests\WebDriver.Extensions.UITests.csproj", "{7DDF4708-861C-4C0E-83DF-9B0A0781DF06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ministry.WebDriver.Extensions.UITests", "test\Ministry.WebDriver.Extensions.UITests\Ministry.WebDriver.Extensions.UITests.csproj", "{7DDF4708-861C-4C0E-83DF-9B0A0781DF06}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

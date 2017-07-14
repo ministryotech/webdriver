@@ -1,17 +1,35 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using OpenQA.Selenium;
 
-namespace Ministry.WebDriverCore
+namespace Ministry.WebDriver.Extensions
 {
-    /// <summary>
-    /// Elements used by a base Automation element for interrogating element states.
-    /// </summary>
-    [SuppressMessage("ReSharper", "UnusedMemberInSuper.Global")]
-    [SuppressMessage("ReSharper", "UnusedMember.Global")]
-    public interface IElementInterrogator
+    [SuppressMessage("ReSharper", "MemberCanBePrivate.Global")]
+    [SuppressMessage("ReSharper", "UnusedAutoPropertyAccessor.Global")]
+    public abstract class AutomationBase : IElementInterrogator
     {
+        #region | Construction |
+
+        /// <summary>
+        /// Creates a base class implementation of an automated component.
+        /// </summary>
+        /// <param name="browser">The web driver implementation to automate with.</param>
+        protected AutomationBase(IWebDriver browser)
+        {
+            Browser = browser;
+        }
+
+        #endregion
+
+        /// <summary>
+        /// Gets the browser instance passed into the page.
+        /// </summary>
+        protected IWebDriver Browser { get; }
+
+        #region | Element status checkers |
+
         /// <summary>
         /// Does the element exist.
         /// </summary>
@@ -23,7 +41,17 @@ namespace Ministry.WebDriverCore
         /// <example>
         /// homePage.DoesElementExist(() => homePage.Header);
         /// </example>
-        bool DoesElementExist(Func<IWebElement> elementPropertyFunc);
+        public bool DoesElementExist(Func<IWebElement> elementPropertyFunc)
+        {
+            try
+            {
+                return elementPropertyFunc() != null;
+            }
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
+        }
 
         /// <summary>
         /// Does the element exist.
@@ -36,7 +64,18 @@ namespace Ministry.WebDriverCore
         /// <example>
         /// homePage.DoesElementExist(() => homePage.HeaderLinks);
         /// </example>
-        bool DoesElementExist(Func<IEnumerable<IWebElement>> elementPropertyFunc);
+        public bool DoesElementExist(Func<IEnumerable<IWebElement>> elementPropertyFunc)
+        {
+            try
+            {
+                var elements = elementPropertyFunc();
+                return elements != null && elements.Any();
+            }
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
+        }
 
         /// <summary>
         /// Does the element exist and is it visible.
@@ -49,7 +88,10 @@ namespace Ministry.WebDriverCore
         /// <example>
         /// homePage.DoesElementExistAndIsVisible(() => homePage.Header);
         /// </example>
-        bool DoesElementExistAndIsVisible(Func<IWebElement> elementPropertyFunc);
+        public bool DoesElementExistAndIsVisible(Func<IWebElement> elementPropertyFunc)
+        {
+            return DoesElementExist(elementPropertyFunc) && elementPropertyFunc().Displayed;
+        }
 
         /// <summary>
         /// Doeses the element exist and is it visible.
@@ -62,6 +104,11 @@ namespace Ministry.WebDriverCore
         /// <example>
         /// homePage.DoesElementExistAndIsVisible(() => homePage.HeaderLinks);
         /// </example>
-        bool DoesElementExistAndIsVisible(Func<IEnumerable<IWebElement>> elementPropertyFunc);
+        public bool DoesElementExistAndIsVisible(Func<IEnumerable<IWebElement>> elementPropertyFunc)
+        {
+            return DoesElementExist(elementPropertyFunc) && elementPropertyFunc().Any(webElement => webElement.Displayed);
+        }
+
+        #endregion
     }
 }

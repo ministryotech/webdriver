@@ -19,7 +19,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\WebDriver.Extensions\WebDriver.Extensions.csproj" />
+    <ProjectReference Include="..\..\src\Ministry.WebDriver.Extensions\Ministry.WebDriver.Extensions.csproj" />
     <ProjectReference Include="..\Google.Search.UIAutomation\Google.Search.UIAutomation.csproj" />
   </ItemGroup>
 

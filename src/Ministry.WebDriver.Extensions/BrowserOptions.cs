@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace Ministry.WebDriverCore
+namespace Ministry.WebDriver.Extensions
 {
     /// <summary>
     /// Collection of options for running the browser.
