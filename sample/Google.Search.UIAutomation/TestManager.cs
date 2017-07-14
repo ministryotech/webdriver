@@ -1,5 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using Ministry.WebDriverCore;
+using Ministry.WebDriver.Extensions;
 using OpenQA.Selenium;
 
 namespace Google.Search.UIAutomation

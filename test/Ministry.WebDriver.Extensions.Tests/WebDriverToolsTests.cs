@@ -2,7 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using Xunit;
 
-namespace Ministry.WebDriverCore.Tests
+namespace Ministry.WebDriver.Extensions.Tests
 {
     /// <summary>
     /// NOTE: The IWebDriver interface is not mocked in some of the tests here as the methods they test are only relevant in behaviour when using FireFox.

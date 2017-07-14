@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
-namespace Ministry.WebDriverCore
+namespace Ministry.WebDriver.Extensions
 {
     /// <summary>
     /// A static class of extension methods used to throw standard reference validation exceptions in a fluent manner.

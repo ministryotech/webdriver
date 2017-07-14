@@ -11,7 +11,7 @@ using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
 using OpenQA.Selenium.PhantomJS;
 
-namespace Ministry.WebDriverCore
+namespace Ministry.WebDriver.Extensions
 {
     /// <summary>
     /// Extension methods to enhance the available tools for writing WebDriver tests.

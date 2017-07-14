@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using Google.Search.UIAutomation;
-using Ministry.WebDriverCore;
+using Ministry.WebDriver.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.PhantomJS;
 using Xunit;

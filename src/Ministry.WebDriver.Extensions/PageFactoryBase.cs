@@ -1,45 +1,50 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using OpenQA.Selenium;
 
-namespace Ministry.WebDriverCore
+namespace Ministry.WebDriver.Extensions
 {
     /// <summary>
-    /// Class that acts as a base component factory for SPA component based sites or hybrids.
+    /// Class that acts as a base page factory for sites that are traditionally page based or consist of a combination of pages and components.
     /// </summary>
     /// <remarks>
-    /// Inherit from this class and add properties for each new AutomationComponent type that is not a page.
+    /// Inherit from this class and add properties for each new AutomationPage type.
     /// </remarks>
+    [SuppressMessage("ReSharper", "UnusedAutoPropertyAccessor.Global")]
     [SuppressMessage("ReSharper", "UnusedMember.Global")]
-    [SuppressMessage("ReSharper", "MemberCanBePrivate.Global")]
-    public abstract class ComponentFactoryBase
+    public abstract class PageFactoryBase
     {
         #region | Construction |
 
         /// <summary>
-        /// Creates a component factory with no browser instance set.
+        /// Creates a page factory with no browser instance set.
         /// </summary>
         /// <remarks>
         /// Implement the child constructor in the same way.
         /// </remarks>
-        protected ComponentFactoryBase()
+        protected PageFactoryBase()
         { }
 
         /// <summary>
-        /// Creates a component factory.
+        /// Creates a page factory.
         /// </summary>
         /// <param name="browser">The web driver implementation to automate with.</param>
         /// <remarks>
-        /// Implement the child constructor passing the browser IWebDriver instance into each component.
+        /// Implement the child constructor passing the browser IWebDriver instance into each page.
         /// </remarks>
         /// <example>
-        /// InitialiseComponentObjectTree();
+        /// InitialisePageObjectTree();
         /// </example>
-        protected ComponentFactoryBase(IWebDriver browser)
+        protected PageFactoryBase(IWebDriver browser)
         {
             Browser = browser;
         }
 
         #endregion
+
+        /// <summary>
+        /// Gets the site root.
+        /// </summary>
+        public string SiteRoot { get; set; }
 
         /// <summary>
         /// Gets or sets the browser instance.
@@ -49,6 +54,6 @@ namespace Ministry.WebDriverCore
         /// <summary>
         /// Initialises the page object tree.
         /// </summary>
-        public abstract void InitialiseComponentObjectTree();
+        public abstract void InitialisePageObjectTree();
     }
 }

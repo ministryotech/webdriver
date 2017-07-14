@@ -6,7 +6,7 @@ using Google.Search.UIAutomation;
 using OpenQA.Selenium;
 using Xunit;
 
-namespace Ministry.WebDriverCore.UITests
+namespace Ministry.WebDriver.Extensions.UITests
 {
     /// <summary>
     /// NOTE: The IWebDriver interface is not mocked in some of the tests here as the methods they test are only relevant in behaviour when using FireFox.
