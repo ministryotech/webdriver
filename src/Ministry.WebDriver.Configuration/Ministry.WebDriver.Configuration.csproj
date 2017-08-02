@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netcoreapp1.0;netcoreapp1.1</TargetFrameworks>
+    <Authors>Keith Jackson</Authors>
+    <Company>The Ministry of Technology</Company>
+    <Description>Dotnet Core Configuration integration for Ministry.WebDriver.Extensions.</Description>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <Copyright>2017 Minotech Ltd.</Copyright>
+    <RepositoryUrl>https://github.com/ministryotech/webdriver.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <FileVersion>2.0.0.0</FileVersion>
+    <Version>2.0.0</Version>
+    <PreBuildEvent></PreBuildEvent>
+    <PostBuildEvent></PostBuildEvent>
+    <PackageId>Ministry.WebDriver.Configuration</PackageId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="1.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="1.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="1.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="1.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ministry.WebDriver.Extensions\Ministry.WebDriver.Extensions.csproj" />
+  </ItemGroup>
+
+</Project>
