@@ -27,6 +27,17 @@ namespace Ministry.WebDriver.Extensions
         /// <c>true</c> if this instance is rendered; otherwise, <c>false</c>.
         /// </value>
         bool IsRendered { get; }
+
+        /// <summary>
+        /// Gets a value indicating whether this component is currently shown.
+        /// </summary>
+        /// <remarks>
+        /// The default implementation here is to check that the container element is not empty. This may not work in many cases so overriding is recommended.
+        /// </remarks>
+        /// <value>
+        /// <c>true</c> if this instance is shown; otherwise, <c>false</c>.
+        /// </value>
+        bool IsShown { get; }
     }
 
     #endregion | Interface |
@@ -38,6 +49,7 @@ namespace Ministry.WebDriver.Extensions
     /// This is useful for elements shared between pages, such as headers, footers and sidebars or for an SPA style app.
     /// </remarks>
     [SuppressMessage("ReSharper", "UnusedMember.Global")]
+    [SuppressMessage("ReSharper", "MemberCanBePrivate.Global")]
     public abstract class AutomationComponent : AutomationBase, IAutomationComponent
     {
         #region | Construction |
@@ -69,7 +81,32 @@ namespace Ministry.WebDriver.Extensions
             {
                 try
                 {
-                    return (ContainerElement != null);
+                    return ContainerElement != null;
+                }
+                catch (NoSuchElementException)
+                {
+                    return false;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets a value indicating whether this component is currently shown.
+        /// </summary>
+        /// <remarks>
+        /// The default implementation here is to check that the container element is not empty. This may not work in many cases so overriding is recommended.
+        /// </remarks>
+        /// <value>
+        /// <c>true</c> if this instance is shown; otherwise, <c>false</c>.
+        /// </value>
+        public virtual bool IsShown
+        {
+            get
+            {
+                try
+                {
+                    return ContainerElement != null && Displayed &&
+                           !string.IsNullOrWhiteSpace(ContainerElement.InnerHtml());
                 }
                 catch (NoSuchElementException)
                 {
