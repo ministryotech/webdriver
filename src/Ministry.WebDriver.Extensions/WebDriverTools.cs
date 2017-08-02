@@ -497,6 +497,118 @@ namespace Ministry.WebDriver.Extensions
             return currentTotalWaitPeriod;
         }
 
+        /// <summary>
+        /// Determines whether the specified element finder reveals an element.
+        /// </summary>
+        /// <param name="browser">The browser.</param>
+        /// <param name="by">The criteria to find the element by.</param>
+        /// <returns>A flag to indicate if the element exists.</returns>
+        public static bool ElementExists(this IWebDriver browser, By by)
+            => ElementIfExists(browser, by) != null;
+
+        /// <summary>
+        /// Determines whether the specified element finder reveals an element.
+        /// </summary>
+        /// <param name="browser">The browser.</param>
+        /// <param name="by">The criteria to find the element by.</param>
+        /// <param name="millisecondsTimeout">The time to wait to look for the element.</param>
+        /// <returns>A flag to indicate if the element exists.</returns>
+        public static bool ElementExists(this IWebDriver browser, By by, int millisecondsTimeout)
+            => ElementIfExists(browser, by, millisecondsTimeout) != null;
+
+        /// <summary>
+        /// Determines whether the specified element finder reveals an element.
+        /// </summary>
+        /// <param name="browser">The browser.</param>
+        /// <param name="by">The criteria to find the element by.</param>
+        /// <returns>A flag to indicate if the element exists.</returns>
+        public static bool ElementIsVisible(this IWebDriver browser, By by)
+            => ElementIfVisible(browser, by) != null;
+
+        /// <summary>
+        /// Determines whether the specified element finder reveals an element.
+        /// </summary>
+        /// <param name="browser">The browser.</param>
+        /// <param name="by">The criteria to find the element by.</param>
+        /// <param name="millisecondsTimeout">The time to wait to look for the element.</param>
+        /// <returns>A flag to indicate if the element exists.</returns>
+        public static bool ElementIsVisible(this IWebDriver browser, By by, int millisecondsTimeout)
+            => ElementIfVisible(browser, by, millisecondsTimeout) != null;
+
+        /// <summary>
+        /// Determines whether the specified element finder reveals an element and returns it.
+        /// </summary>
+        /// <param name="browser">The browser.</param>
+        /// <param name="by">The criteria to find the element by.</param>
+        /// <returns>An element, if it exists.</returns>
+        public static IWebElement ElementIfExists(this IWebDriver browser, By by)
+        {
+            try
+            {
+                return browser.FindElement(by);
+            }
+            catch (NoSuchElementException)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Determines whether the specified element finder reveals an element and returns it.
+        /// </summary>
+        /// <param name="browser">The browser.</param>
+        /// <param name="by">The criteria to find the element by.</param>
+        /// <param name="millisecondsTimeout">The time to wait to look for the element.</param>
+        /// <returns>An element, if it exists.</returns>
+        public static IWebElement ElementIfExists(this IWebDriver browser, By by, int millisecondsTimeout)
+        {
+            try
+            {
+                return browser.FindElement(by, millisecondsTimeout);
+            }
+            catch (NoSuchElementException)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Determines whether the specified element finder reveals an element and returns it.
+        /// </summary>
+        /// <param name="browser">The browser.</param>
+        /// <param name="by">The criteria to find the element by.</param>
+        /// <returns>An element, if it exists.</returns>
+        public static IWebElement ElementIfVisible(this IWebDriver browser, By by)
+        {
+            try
+            {
+                return browser.FindElement(by, 1000, true);
+            }
+            catch (NoSuchElementException)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Determines whether the specified element finder reveals an element and returns it.
+        /// </summary>
+        /// <param name="browser">The browser.</param>
+        /// <param name="by">The criteria to find the element by.</param>
+        /// <param name="millisecondsTimeout">The time to wait to look for the element.</param>
+        /// <returns>An element, if it exists.</returns>
+        public static IWebElement ElementIfVisible(this IWebDriver browser, By by, int millisecondsTimeout)
+        {
+            try
+            {
+                return browser.FindElement(by, millisecondsTimeout, true);
+            }
+            catch (NoSuchElementException)
+            {
+                return null;
+            }
+        }
+
         #endregion | Element Searching |
 
         #region | Inner Html Fetchers |

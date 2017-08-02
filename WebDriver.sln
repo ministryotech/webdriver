@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.7
+VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 15.0.0.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{639A4228-C913-4634-B58B-60A484692395}"
 EndProject
@@ -24,6 +24,10 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Google.Search.UITests", "sample\Google.Search.UITests\Google.Search.UITests.csproj", "{0DDECB1C-E8D9-42C9-9474-244A50AF551A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ministry.WebDriver.Extensions.UITests", "test\Ministry.WebDriver.Extensions.UITests\Ministry.WebDriver.Extensions.UITests.csproj", "{7DDF4708-861C-4C0E-83DF-9B0A0781DF06}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ministry.WebDriver.Configuration", "src\Ministry.WebDriver.Configuration\Ministry.WebDriver.Configuration.csproj", "{E7FE8C55-8885-4849-BE22-3A9E4FEC595B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ministry.WebDriver.EntityFramework", "src\Ministry.WebDriver.EntityFramework\Ministry.WebDriver.EntityFramework.csproj", "{1958E81E-D7BF-4D97-8662-ABA8EC111161}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +55,14 @@ Global
 		{7DDF4708-861C-4C0E-83DF-9B0A0781DF06}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7DDF4708-861C-4C0E-83DF-9B0A0781DF06}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7DDF4708-861C-4C0E-83DF-9B0A0781DF06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7FE8C55-8885-4849-BE22-3A9E4FEC595B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7FE8C55-8885-4849-BE22-3A9E4FEC595B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7FE8C55-8885-4849-BE22-3A9E4FEC595B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7FE8C55-8885-4849-BE22-3A9E4FEC595B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1958E81E-D7BF-4D97-8662-ABA8EC111161}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1958E81E-D7BF-4D97-8662-ABA8EC111161}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1958E81E-D7BF-4D97-8662-ABA8EC111161}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1958E81E-D7BF-4D97-8662-ABA8EC111161}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -61,5 +73,7 @@ Global
 		{0391FC43-AC5E-456A-AA0A-C35C0E644FA7} = {F25796C0-966E-493C-8C5F-466750FE987D}
 		{0DDECB1C-E8D9-42C9-9474-244A50AF551A} = {F25796C0-966E-493C-8C5F-466750FE987D}
 		{7DDF4708-861C-4C0E-83DF-9B0A0781DF06} = {9A664D0C-FBEC-4DA7-B300-D8B6972AE742}
+		{E7FE8C55-8885-4849-BE22-3A9E4FEC595B} = {639A4228-C913-4634-B58B-60A484692395}
+		{1958E81E-D7BF-4D97-8662-ABA8EC111161} = {639A4228-C913-4634-B58B-60A484692395}
 	EndGlobalSection
 EndGlobal

@@ -46,6 +46,7 @@ namespace Ministry.WebDriver.Extensions
 
     #endregion | Abstractions |
 
+    /// <inheritdoc />
     /// <summary>
     /// Abstract definition for a key class to provide access to test objects on a component based site.
     /// </summary>
@@ -86,6 +87,7 @@ namespace Ministry.WebDriver.Extensions
         public TComponentFactory Components { get; }
     }
 
+    /// <inheritdoc />
     /// <summary>
     /// Abstract definition for a key class to provide access to test objects on a traditional page based site.
     /// </summary>
@@ -128,6 +130,7 @@ namespace Ministry.WebDriver.Extensions
         public TPageFactory Pages { get; }
     }
 
+    /// <inheritdoc />
     /// <summary>
     /// Abstract definition for a key class to provide access to test objects on a hybrid site consisting of pages and components.
     /// </summary>
