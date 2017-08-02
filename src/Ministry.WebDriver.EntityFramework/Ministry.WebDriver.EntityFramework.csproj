@@ -9,9 +9,9 @@
     <Copyright>2017 Minotech Ltd.</Copyright>
     <RepositoryUrl>https://github.com/ministryotech/webdriver.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <AssemblyVersion>2.0.0.0</AssemblyVersion>
-    <FileVersion>2.0.0.0</FileVersion>
-    <Version>2.0.0</Version>
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>
+    <FileVersion>2.1.0.0</FileVersion>
+    <Version>2.1.0</Version>
     <PreBuildEvent></PreBuildEvent>
     <PostBuildEvent></PostBuildEvent>
     <PackageId>Ministry.WebDriver.EntityFramework</PackageId>
