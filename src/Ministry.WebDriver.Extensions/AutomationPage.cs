@@ -57,7 +57,7 @@ namespace Ministry.WebDriver.Extensions
         /// Gets a value indicating whether this page is the currently active page.
         /// </summary>
         /// <remarks>
-        /// The default implementation here is to wait for a second and check that the URLs match. Recommended usage is to override the method to check an element exists.
+        /// The default implementation here is to wait for a second and check that the URLs match, ignoring any query strings and case differences. Recommended usage is to override the method to check an element exists.
         /// </remarks>
         /// <value>
         /// <c>true</c> if this instance is currently active; otherwise, <c>false</c>.
@@ -66,8 +66,15 @@ namespace Ministry.WebDriver.Extensions
         {
             get
             {
-                Browser.Wait(1000);
-                return Browser.Url == Url;
+                var cleanUrl = Url.Trim('/').ToLowerInvariant();
+                for (var i = 0; i < 10; i++)
+                {
+                    var currentUrl = Browser.Url.Split('?')[0].Trim('/').ToLowerInvariant();
+                    if (currentUrl == cleanUrl) return true;
+                    Browser.Wait(1000);
+                }
+
+                return false;
             }
         }
     }
