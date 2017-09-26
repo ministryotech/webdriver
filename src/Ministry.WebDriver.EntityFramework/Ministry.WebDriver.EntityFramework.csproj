@@ -9,9 +9,9 @@
     <Copyright>2017 Minotech Ltd.</Copyright>
     <RepositoryUrl>https://github.com/ministryotech/webdriver.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <AssemblyVersion>2.1.0.0</AssemblyVersion>
-    <FileVersion>2.1.0.0</FileVersion>
-    <Version>2.1.0</Version>
+    <AssemblyVersion>2.2.0.0</AssemblyVersion>
+    <FileVersion>2.2.0.0</FileVersion>
+    <Version>2.2.0</Version>
     <PreBuildEvent></PreBuildEvent>
     <PostBuildEvent></PostBuildEvent>
     <PackageId>Ministry.WebDriver.EntityFramework</PackageId>
@@ -22,7 +22,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Ministry.WebDriver.Api\Ministry.WebDriver.Api.csproj" />
     <ProjectReference Include="..\Ministry.WebDriver.Configuration\Ministry.WebDriver.Configuration.csproj" />
+    <ProjectReference Include="..\Ministry.WebDriver.Extensions\Ministry.WebDriver.Extensions.csproj" />
   </ItemGroup>
 
 </Project>
