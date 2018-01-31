@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.6
+VisualStudioVersion = 15.0.27004.2006
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F6693BA7-F759-4E12-B905-D7F3C269F748}"
 EndProject
@@ -18,6 +18,12 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ministry.WebDriver.Extensions.Tests", "test\Ministry.WebDriver.Extensions.Tests\Ministry.WebDriver.Extensions.Tests.csproj", "{9FAFD10F-B50A-43D8-9631-292A675FE4A7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ministry.WebDriver.Extensions.UITests", "test\Ministry.WebDriver.Extensions.UITests\Ministry.WebDriver.Extensions.UITests.csproj", "{39D215BD-2D8B-4EBF-875A-244627C8F7B8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample", "sample", "{DE405C5E-F21F-4139-BDD3-F5891D2307C8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Google.Search.UIAutomation", "sample\Google.Search.UIAutomation\Google.Search.UIAutomation.csproj", "{7BF27BC4-C0B1-45DB-BABE-029EE6EE9363}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Google.Search.UITests", "sample\Google.Search.UITests\Google.Search.UITests.csproj", "{2B4374E2-18EA-4BFE-B7EF-FCE4A09B26B5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +55,14 @@ Global
 		{39D215BD-2D8B-4EBF-875A-244627C8F7B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39D215BD-2D8B-4EBF-875A-244627C8F7B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39D215BD-2D8B-4EBF-875A-244627C8F7B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BF27BC4-C0B1-45DB-BABE-029EE6EE9363}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BF27BC4-C0B1-45DB-BABE-029EE6EE9363}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BF27BC4-C0B1-45DB-BABE-029EE6EE9363}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BF27BC4-C0B1-45DB-BABE-029EE6EE9363}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B4374E2-18EA-4BFE-B7EF-FCE4A09B26B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B4374E2-18EA-4BFE-B7EF-FCE4A09B26B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B4374E2-18EA-4BFE-B7EF-FCE4A09B26B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B4374E2-18EA-4BFE-B7EF-FCE4A09B26B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,5 +74,10 @@ Global
 		{68135026-8416-44D3-BC1E-BA0F8A210086} = {F6693BA7-F759-4E12-B905-D7F3C269F748}
 		{9FAFD10F-B50A-43D8-9631-292A675FE4A7} = {64516FA8-C41E-4741-B3BC-12793EC508C9}
 		{39D215BD-2D8B-4EBF-875A-244627C8F7B8} = {64516FA8-C41E-4741-B3BC-12793EC508C9}
+		{7BF27BC4-C0B1-45DB-BABE-029EE6EE9363} = {DE405C5E-F21F-4139-BDD3-F5891D2307C8}
+		{2B4374E2-18EA-4BFE-B7EF-FCE4A09B26B5} = {DE405C5E-F21F-4139-BDD3-F5891D2307C8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {97470E67-F4F2-4113-BCED-FB932E3B6423}
 	EndGlobalSection
 EndGlobal

@@ -5,12 +5,12 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp1.1</TargetFramework>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
     <Authors>Keith Jackson</Authors>
     <Company>The Ministry of Technology</Company>
     <Description>A basic styled framework to build a structured page or component model for writing UI Automation tests.</Description>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-    <Copyright>2017 Minotech Ltd.</Copyright>
+    <Copyright>2018 Minotech Ltd.</Copyright>
     <RepositoryUrl>https://github.com/ministryotech/webdriver.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <ApplicationIcon />
@@ -24,13 +24,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.0.0" />
-    <PackageReference Include="NSubstitute" Version="2.0.3" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.5.0" />
+    <PackageReference Include="NSubstitute" Version="3.1.0" />
     <PackageReference Include="Microsoft.DotNet.InternalAbstractions" Version="1.0.0" />
     <PackageReference Include="System.Linq.Queryable" Version="4.3.0" />
     <PackageReference Include="System.Runtime.Serialization.Primitives" Version="4.3.0" />
-    <PackageReference Include="xunit" Version="2.3.0-beta1-build3642" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.3.0-beta1-build1309" />
+    <PackageReference Include="xunit" Version="2.3.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
     <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.0-beta1-build3642" />
   </ItemGroup>
 
