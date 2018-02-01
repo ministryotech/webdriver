@@ -38,7 +38,7 @@ namespace Ministry.WebDriver.Extensions.UITests
         #endregion
 
         #region | GetBrowser Tests |
-
+        
         [Theory]
         [InlineData("InternetExplorer", "OpenQA.Selenium.IE.InternetExplorerDriver")]
         [InlineData("Internet Explorer", "OpenQA.Selenium.IE.InternetExplorerDriver")]
@@ -50,7 +50,7 @@ namespace Ministry.WebDriver.Extensions.UITests
         [InlineData("Windows Internet Explorer", "OpenQA.Selenium.IE.InternetExplorerDriver")]
         [InlineData("IE", "OpenQA.Selenium.IE.InternetExplorerDriver")]
         [InlineData("MSIE", "OpenQA.Selenium.IE.InternetExplorerDriver")]
-        public void TestThatICanObtainAWebDriverInstanceForIE(string browserName, string objectType)
+        public void TestThatICanObtainAWebDriverInstanceForInternetExplorer(string browserName, string objectType)
         {
             tm = new TestManager(browserName);
             Assert.Equal(objectType, tm.Browser.GetType().ToString());
@@ -93,7 +93,7 @@ namespace Ministry.WebDriver.Extensions.UITests
         [InlineData("Ghost", "OpenQA.Selenium.PhantomJS.PhantomJSDriver")]
         [InlineData("PhantomJS", "OpenQA.Selenium.PhantomJS.PhantomJSDriver")]
         [InlineData("Headless", "OpenQA.Selenium.PhantomJS.PhantomJSDriver")]
-        public void TestThatICanObtainAWebDriverInstanceForPhantomJS(string browserName, string objectType)
+        public void TestThatICanObtainAWebDriverInstanceForPhantomJs(string browserName, string objectType)
         {
             tm = new TestManager(browserName);
             Assert.Equal(objectType, tm.Browser.GetType().ToString());
@@ -130,7 +130,6 @@ namespace Ministry.WebDriver.Extensions.UITests
         [InlineData("Firefox")]
         [InlineData("Chrome")]
         [InlineData("PhantomJS")]
-        [InlineData("InternetExplorer")]
         [InlineData("Edge")]
         public void TestThatFindingAnElementWithALongTimeoutWorksInAllSupportedBrowsers(string browserName)
         {

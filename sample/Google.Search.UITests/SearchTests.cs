@@ -23,9 +23,9 @@ namespace Google.Search.UITests
     }
 
     [SuppressMessage("ReSharper", "UnusedMember.Global")]
-    public class SearchPhantomJSTests : SearchCrossBrowserTests
+    public class SearchPhantomJsTests : SearchCrossBrowserTests
     {
-        public SearchPhantomJSTests() : base("PhantomJS")
+        public SearchPhantomJsTests() : base("PhantomJS")
         { }
     }
 
@@ -62,7 +62,6 @@ namespace Google.Search.UITests
             tm.Browser.Navigate().GoToPage(tm.Pages.Home);
             tm.Pages.Home.SearchBox.SendKeys(searchString);
             tm.Pages.Home.SearchBox.SendKeys(Keys.Enter);
-            tm.Pages.Home.SearchButton.Click();
 
             if (tm.Browser.GetType() == typeof(PhantomJSDriver))
             {

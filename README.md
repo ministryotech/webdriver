@@ -26,10 +26,10 @@ Ensure that 'Enable Protected Mode' is turned off in ALL zones in IE.
 
 You will need to make sure that your UI Tests library includes references to any of the Driver packages that you intend to use from nuget to ensure they are added to the output directoried...
 - PhantomJS: PhantomJS v2.1.1 & Selenium.WebDriver.PhantomJS v1.0.0
-- Chrome: Selenium.WebDriver.ChromeDriver v2.30.0.1
-- IE: Selenium.WebDriver.IEDriver v3.4.0
-- Firefox: Selenium.WebDriver.GeckoDriver v0.18.0
-- Edge: Selenium.WebDriver.MicrosoftWebDriver v10.0.15063
+- Chrome: Selenium.WebDriver.ChromeDriver v2.35.0
+- IE: Selenium.WebDriver.IEDriver v3.8.0 (On modern setups this can be tricky - Scaling will set the Browser zoom level above 100% which will cause failures. The IE driver is very flaky.)
+- Firefox: Selenium.WebDriver.GeckoDriver v0.19.1
+- Edge: Selenium.WebDriver.MicrosoftWebDriver v10.0.16299 (This is an annoying one as it needs to match the buil of Windows 10 used to test with or it will just fail)
 
 # Useful Links #
 The following links relate to all of the key elements within the project technology stack...

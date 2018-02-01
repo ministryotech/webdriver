@@ -26,6 +26,11 @@ namespace Ministry.WebDriver.Extensions
         /// <c>true</c> if this instance is currently active; otherwise, <c>false</c>.
         /// </value>
         bool IsShown { get; }
+
+        /// <summary>
+        /// Gets a flag to indicate if accessing the page requires logging in.
+        /// </summary>
+        bool RequiresLogin { get; }
     }
 
     #endregion | Interface |
@@ -46,12 +51,34 @@ namespace Ministry.WebDriver.Extensions
             : base(browser)
         { }
 
+        /// <summary>
+        /// Creates a base class implementation of an automated page.
+        /// </summary>
+        /// <param name="driver">The web driver implementation to automate with.</param>
+        /// <param name="siteRoot">The site root.</param>
+        protected AutomationPage(IWebDriver driver, string siteRoot)
+            : base(driver)
+        {
+            SiteRoot = siteRoot;
+            RequiresLogin = false;
+        }
+
         #endregion
+
+        /// <summary>
+        /// Gets the site root.
+        /// </summary>
+        protected string SiteRoot { get; }
 
         /// <summary>
         /// Gets the URL linked to this 'page'.
         /// </summary>
         public abstract string Url { get; }
+
+        /// <summary>
+        /// Gets a flag to indicate if accessing the page requires logging in.
+        /// </summary>
+        public bool RequiresLogin { get; protected set; }
 
         /// <summary>
         /// Gets a value indicating whether this page is the currently active page.
