@@ -32,6 +32,14 @@
     <PackageReference Include="xunit" Version="2.3.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
     <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.0-beta1-build3642" />
+    <!-- Driver Modules -->
+    <PackageReference Include="PhantomJS" Version="2.1.1" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="2.35.0" />
+    <PackageReference Include="Selenium.WebDriver.GeckoDriver" Version="0.19.1" />
+    <PackageReference Include="Selenium.WebDriver.IEDriver" Version="3.8.0" />
+    <PackageReference Include="Selenium.WebDriver.MicrosoftWebDriver" Version="10.0.16299" /><!-- Version has to match Windows 10 build - Annoying -->
+    <PackageReference Include="Selenium.WebDriver.PhantomJS" Version="1.0.0" />
+    <!-- Driver Modules -->
   </ItemGroup>
 
   <ItemGroup>

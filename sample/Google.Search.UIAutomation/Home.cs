@@ -33,7 +33,7 @@ namespace Google.Search.UIAutomation
         #region | Elements |
 
         public IWebElement SearchBox => Browser.FindElement(By.Name("q"));
-        public IWebElement SearchButton => Browser.FindElement(By.Name("btnG"), 1000);
+        public IWebElement SearchButton => Browser.FindElement(By.XPath("//input[@value='Google Search']"), 1000);
         public IList<IWebElement> ResultLinks => Browser.FindElements(By.XPath("//*[@id='rso']//a"), 5000);
 
         #endregion

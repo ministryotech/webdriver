@@ -38,24 +38,23 @@ namespace Ministry.WebDriver.Extensions.UITests
         #endregion
 
         #region | GetBrowser Tests |
-
-        //TODO: Disabled because IE Testing fails in Windows 10
-        //[Theory]
-        //[InlineData("InternetExplorer", "OpenQA.Selenium.IE.InternetExplorerDriver")]
-        //[InlineData("Internet Explorer", "OpenQA.Selenium.IE.InternetExplorerDriver")]
-        //[InlineData("MicrosoftInternetExplorer", "OpenQA.Selenium.IE.InternetExplorerDriver")]
-        //[InlineData("Microsoft Internet Explorer", "OpenQA.Selenium.IE.InternetExplorerDriver")]
-        //[InlineData("WindowsExplorer", "OpenQA.Selenium.IE.InternetExplorerDriver")]
-        //[InlineData("Windows Explorer", "OpenQA.Selenium.IE.InternetExplorerDriver")]
-        //[InlineData("WindowsInternetExplorer", "OpenQA.Selenium.IE.InternetExplorerDriver")]
-        //[InlineData("Windows Internet Explorer", "OpenQA.Selenium.IE.InternetExplorerDriver")]
-        //[InlineData("IE", "OpenQA.Selenium.IE.InternetExplorerDriver")]
-        //[InlineData("MSIE", "OpenQA.Selenium.IE.InternetExplorerDriver")]
-        //public void TestThatICanObtainAWebDriverInstanceForIE(string browserName, string objectType)
-        //{
-        //    tm = new TestManager(browserName);
-        //    Assert.Equal(objectType, tm.Browser.GetType().ToString());
-        //}
+        
+        [Theory]
+        [InlineData("InternetExplorer", "OpenQA.Selenium.IE.InternetExplorerDriver")]
+        [InlineData("Internet Explorer", "OpenQA.Selenium.IE.InternetExplorerDriver")]
+        [InlineData("MicrosoftInternetExplorer", "OpenQA.Selenium.IE.InternetExplorerDriver")]
+        [InlineData("Microsoft Internet Explorer", "OpenQA.Selenium.IE.InternetExplorerDriver")]
+        [InlineData("WindowsExplorer", "OpenQA.Selenium.IE.InternetExplorerDriver")]
+        [InlineData("Windows Explorer", "OpenQA.Selenium.IE.InternetExplorerDriver")]
+        [InlineData("WindowsInternetExplorer", "OpenQA.Selenium.IE.InternetExplorerDriver")]
+        [InlineData("Windows Internet Explorer", "OpenQA.Selenium.IE.InternetExplorerDriver")]
+        [InlineData("IE", "OpenQA.Selenium.IE.InternetExplorerDriver")]
+        [InlineData("MSIE", "OpenQA.Selenium.IE.InternetExplorerDriver")]
+        public void TestThatICanObtainAWebDriverInstanceForInternetExplorer(string browserName, string objectType)
+        {
+            tm = new TestManager(browserName);
+            Assert.Equal(objectType, tm.Browser.GetType().ToString());
+        }
 
         [Theory]
         [InlineData("Microsoft Edge", "OpenQA.Selenium.Edge.EdgeDriver")]
@@ -94,7 +93,7 @@ namespace Ministry.WebDriver.Extensions.UITests
         [InlineData("Ghost", "OpenQA.Selenium.PhantomJS.PhantomJSDriver")]
         [InlineData("PhantomJS", "OpenQA.Selenium.PhantomJS.PhantomJSDriver")]
         [InlineData("Headless", "OpenQA.Selenium.PhantomJS.PhantomJSDriver")]
-        public void TestThatICanObtainAWebDriverInstanceForPhantomJS(string browserName, string objectType)
+        public void TestThatICanObtainAWebDriverInstanceForPhantomJs(string browserName, string objectType)
         {
             tm = new TestManager(browserName);
             Assert.Equal(objectType, tm.Browser.GetType().ToString());

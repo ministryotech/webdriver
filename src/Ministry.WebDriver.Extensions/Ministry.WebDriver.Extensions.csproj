@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;net45;net462</TargetFrameworks>
     <Authors>Keith Jackson</Authors>
     <Company>The Ministry of Technology</Company>
     <Description>A basic styled framework to build a structured page or component model for writing UI Automation tests.</Description>
@@ -19,13 +19,15 @@
 
   <ItemGroup>
     <PackageReference Include="Selenium.WebDriver" Version="3.8.0" />
+    <PackageReference Include="System.Linq.Queryable" Version="4.3.0" />
+    <!-- Driver Modules (Need to be duplicated to test projects) -->
     <PackageReference Include="PhantomJS" Version="2.1.1" />
     <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="2.35.0" />
     <PackageReference Include="Selenium.WebDriver.GeckoDriver" Version="0.19.1" />
     <PackageReference Include="Selenium.WebDriver.IEDriver" Version="3.8.0" />
-    <PackageReference Include="Selenium.WebDriver.MicrosoftWebDriver" Version="10.0.16299" />
+    <PackageReference Include="Selenium.WebDriver.MicrosoftWebDriver" Version="10.0.16299" /><!-- Version has to match Windows 10 build - Annoying -->
     <PackageReference Include="Selenium.WebDriver.PhantomJS" Version="1.0.0" />
-    <PackageReference Include="System.Linq.Queryable" Version="4.3.0" />
+    <!-- Driver Modules -->
   </ItemGroup>
 
 </Project>
