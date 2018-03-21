@@ -47,7 +47,7 @@ Our other open source repositories can be found here...
 * [https://github.com/ministryotech](https://github.com/ministryotech)
 * [https://github.com/tiefling](https://github.com/tiefling)
 
-Most of our content is stored on both Github and Bitbucket.
+Newer content prefers Github. Bitbucket is no longer actively used.
 
 ### Where can I get it? ###
 You can download the package for this project from any of the following package managers...
@@ -56,8 +56,6 @@ You can download the package for this project from any of the following package 
 
 ### Contribution guidelines ###
 If you would like to contribute to the project, please contact me.
-
-The source code can be used in a simple text editor or within Visual Studio using NodeJS Tools for Visual Studio.
 
 ### Who do I talk to? ###
 * Keith Jackson - keith@ministryotech.co.uk
