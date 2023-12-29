@@ -9,7 +9,6 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
-using OpenQA.Selenium.PhantomJS;
 
 namespace Ministry.WebDriver.Extensions
 {
@@ -45,8 +44,6 @@ namespace Ministry.WebDriver.Extensions
         /// <exception cref="ArgumentNullException">The parameter is null.</exception>
         public static IWebDriver GetBrowser(Type browserType, BrowserOptions options = null)
         {
-            if (browserType == typeof(PhantomJSDriver))
-                return GetPhantomJSBrowser(options);
             if (browserType == typeof(ChromeDriver))
                 return GetChromeBrowser();
             if (browserType == typeof(EdgeDriver))
@@ -119,23 +116,6 @@ namespace Ministry.WebDriver.Extensions
         }
 
         /// <summary>
-        /// Gets the PhantomJS Browser.
-        /// </summary>
-        /// <returns>A browser instance.</returns>
-        private static IWebDriver GetPhantomJSBrowser(BrowserOptions options)
-        {
-            var pjsService = PhantomJSDriverService.CreateDefaultService(GetExecutionPath());
-            if (options == null)
-                options = new BrowserOptions();
-
-            pjsService.IgnoreSslErrors = options.IgnoreSslErrors;
-            pjsService.LoadImages = options.LoadImages;
-            pjsService.ProxyType = "none";
-
-            return new PhantomJSDriver(pjsService);
-        }
-
-        /// <summary>
         /// Gets the execution path for the drivers.
         /// </summary>
         /// <returns>They should be present in the executing directory.</returns>
@@ -155,7 +135,7 @@ namespace Ministry.WebDriver.Extensions
                 case "ghost":
                 case "phantomjs":
                 case "headless":
-                    return typeof(PhantomJSDriver);
+                    throw new ArgumentOutOfRangeException(nameof(browserName), $"The browser '{browserName}' requires PhantomJS which is no longer supported");
                 case "chrome":
                 case "google":
                 case "googlechrome":

@@ -3,7 +3,6 @@ using System.Diagnostics.CodeAnalysis;
 using Google.Search.UIAutomation;
 using Ministry.WebDriver.Extensions;
 using OpenQA.Selenium;
-using OpenQA.Selenium.PhantomJS;
 using Xunit;
 
 namespace Google.Search.UITests
@@ -63,17 +62,9 @@ namespace Google.Search.UITests
             tm.Pages.Home.SearchBox.SendKeys(searchString);
             tm.Pages.Home.SearchBox.SendKeys(Keys.Enter);
 
-            if (tm.Browser.GetType() == typeof(PhantomJSDriver))
-            {
-                // PhantomJS and Google do NOT get along.
-                Assert.Contains(searchString, tm.Browser.Title);
-            }
-            else
-            {
-                Assert.True(tm.Pages.Home.HasResults, "No results were loaded");
-                Assert.True(tm.Pages.Home.HasResultsFor(searchString),
-                    "The results found do not appear to be for the provided search query");
-            }
+            Assert.True(tm.Pages.Home.HasResults, "No results were loaded");
+            Assert.True(tm.Pages.Home.HasResultsFor(searchString),
+                "The results found do not appear to be for the provided search query");
         }
 
     }

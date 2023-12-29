@@ -6,7 +6,7 @@ using Ministry.WebDriver.Extensions;
 namespace Ministry.WebDriver.EntityFramework
 {
     /// <summary>
-    /// Base class to be inherrited from by tests requiring access to a database layer.
+    /// Base class to be inherited from by tests requiring access to a database layer.
     /// </summary>
     [SuppressMessage("ReSharper", "InconsistentNaming")]
     [SuppressMessage("ReSharper", "UnusedMember.Global")]
