@@ -11,8 +11,8 @@ namespace Ministry.WebDriver.Extensions
 	/// <remarks>
 	/// This class should be used to throw <see cref="ArgumentException"/>s and other exceptions used to guard against bad input into a method.
 	/// </remarks>
-    [SuppressMessage("ReSharper", "UnusedMember.Global")]
-    [SuppressMessage("ReSharper", "MemberCanBePrivate.Global")]
+    [SuppressMessage("ReSharper", "UnusedMember.Global", Justification = "Library")]
+    [SuppressMessage("ReSharper", "MemberCanBePrivate.Global", Justification = "Library")]
     internal static class Guard
     {
         /// <summary>
@@ -229,7 +229,7 @@ namespace Ministry.WebDriver.Extensions
 
                     break;
                 default:
-                    throw new EnumValueNotSupportedException(boundary, "boundary");
+                    throw new EnumValueNotSupportedException(boundary, nameof(boundary));
             }
 
             return argument;

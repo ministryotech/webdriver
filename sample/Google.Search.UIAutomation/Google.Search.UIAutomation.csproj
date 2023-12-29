@@ -3,15 +3,14 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>Keith Jackson</Authors>
-    <Company>The Ministry of Technology</Company>
+    <Company>Minotech Ltd. (The Ministry of Technology)</Company>
+    <Copyright>2024 Keith Jackson / The Ministry of Technology</Copyright>
     <Description>Sample UI Automation Farmework for Google Search.</Description>
-    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-    <Copyright>2018 Minotech Ltd.</Copyright>
-    <RepositoryUrl>https://github.com/ministryotech/webdriver.git</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <AssemblyVersion>3.0.0.0</AssemblyVersion>
-    <FileVersion>3.0.0.0</FileVersion>
-    <Version>3.0.0</Version>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

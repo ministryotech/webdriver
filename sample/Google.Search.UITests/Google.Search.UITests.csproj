@@ -1,19 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <OutputType>exe</OutputType>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Authors>Keith Jackson</Authors>
+    <Company>Minotech Ltd. (The Ministry of Technology)</Company>
+    <Copyright>2024 Keith Jackson / The Ministry of Technology</Copyright>
+    <Description>Tests using sample code on Google Search.</Description>
   </PropertyGroup>
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
-    <Authors>Keith Jackson</Authors>
-    <Company>The Ministry of Technology</Company>
-    <Description>Tests using sample code on Google Search.</Description>
-    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-    <Copyright>2018 Minotech Ltd.</Copyright>
-    <RepositoryUrl>https://github.com/ministryotech/webdriver.git</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <OutputTypeEx>exe</OutputTypeEx>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -22,14 +19,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.5.0" />
-    <PackageReference Include="NSubstitute" Version="3.1.0" />
-    <PackageReference Include="Microsoft.DotNet.InternalAbstractions" Version="1.0.0" />
-    <PackageReference Include="System.Linq.Queryable" Version="4.3.0" />
-    <PackageReference Include="System.Runtime.Serialization.Primitives" Version="4.3.0" />
-    <PackageReference Include="xunit" Version="2.3.1" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
-    <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.0-beta1-build3642" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+    <PackageReference Include="NSubstitute" Version="5.1.0" />
+    <PackageReference Include="xunit" Version="2.6.4" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.5.6">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <!-- Driver Modules -->
     <PackageReference Include="PhantomJS" Version="2.1.1" />
     <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="2.35.0" />
@@ -38,10 +34,6 @@
     <PackageReference Include="Selenium.WebDriver.MicrosoftWebDriver" Version="10.0.16299" /><!-- Version has to match Windows 10 build - Annoying -->
     <PackageReference Include="Selenium.WebDriver.PhantomJS" Version="1.0.0" />
     <!-- Driver Modules -->
-  </ItemGroup>
-
-  <ItemGroup>
-    <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
   </ItemGroup>
 
 </Project>

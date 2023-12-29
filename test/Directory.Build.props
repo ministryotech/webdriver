@@ -1,0 +1,47 @@
+<Project>
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>disable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <LangVersion>10</LangVersion>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <AnalysisMode>Recommended</AnalysisMode>
+        <AnalysisModeGlobalization>None</AnalysisModeGlobalization>
+        <AnalysisModeSecurity>All</AnalysisModeSecurity>
+        <AnalysisModeMaintainability>All</AnalysisModeMaintainability>
+        <AnalysisLevel>6.0</AnalysisLevel>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+        <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Description>A basic styled framework to build a structured page or component model for writing UI Automation tests.</Description>
+        <Authors>Keith Jackson</Authors>
+        <Company>Minotech Ltd. (The Ministry of Technology)</Company>
+        <Copyright>2024 Keith Jackson / The Ministry of Technology</Copyright>
+        <RepositoryUrl>https://github.com/ministryotech/webdriver.git</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <!--<WarningsNotAsErrors></WarningsNotAsErrors>--><!--Enable this to allow some warnings-->
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+        <PackageReference Include="NSubstitute" Version="5.1.0" />
+        <PackageReference Include="xunit" Version="2.6.4" />
+        <PackageReference Include="xunit.runner.visualstudio" Version="2.5.6">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+
+</Project>

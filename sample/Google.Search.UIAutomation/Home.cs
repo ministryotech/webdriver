@@ -9,6 +9,8 @@ namespace Google.Search.UIAutomation
     /// <summary>
     /// Home page definition
     /// </summary>
+    /// <inheritdoc cref="AutomationPage"/>
+    /// <see cref="AutomationPage"/>
     [SuppressMessage("ReSharper", "ConvertToAutoProperty")]
     [SuppressMessage("ReSharper", "MemberCanBePrivate.Global")]
     [SuppressMessage("ReSharper", "ReturnTypeCanBeEnumerable.Global")]
@@ -28,16 +30,31 @@ namespace Google.Search.UIAutomation
             this.siteRoot = siteRoot;
         }
 
+        /// <inheritdoc/>
         public override string Url => siteRoot;
 
         #region | Elements |
 
+        /// <summary>
+        /// A Search box.
+        /// </summary>
         public IWebElement SearchBox => Browser.FindElement(By.Name("q"));
+        
+        /// <summary>
+        /// A Search button.
+        /// </summary>
         public IWebElement SearchButton => Browser.FindElement(By.XPath("//input[@value='Google Search']"), 1000);
+        
+        /// <summary>
+        /// Results.
+        /// </summary>
         public IList<IWebElement> ResultLinks => Browser.FindElements(By.XPath("//*[@id='rso']//a"), 5000);
 
         #endregion
 
+        /// <summary>
+        /// Indicate if results are present.
+        /// </summary>
         public bool HasResults
         {
             get

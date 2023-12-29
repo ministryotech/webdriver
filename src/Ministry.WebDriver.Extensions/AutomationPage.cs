@@ -8,6 +8,8 @@ namespace Ministry.WebDriver.Extensions
     /// <summary>
     /// A basic definition for a page.
     /// </summary>
+    /// <inheritdoc cref="IElementInterrogator"/>
+    /// <seealso cref="IElementInterrogator"/>
     [SuppressMessage("ReSharper", "UnusedMember.Global")]
     public interface IAutomationPage : IElementInterrogator
     {
@@ -38,6 +40,9 @@ namespace Ministry.WebDriver.Extensions
     /// <summary>
     /// A basic definition for a page.
     /// </summary>
+    /// <inheritdoc cref="IAutomationPage"/>
+    /// <seealso cref="IAutomationPage"/>
+    /// <seealso cref="AutomationBase"/>
     [SuppressMessage("ReSharper", "UnusedMember.Global")]
     public abstract class AutomationPage : AutomationBase, IAutomationPage
     {

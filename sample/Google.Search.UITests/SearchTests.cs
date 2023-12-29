@@ -9,21 +9,21 @@ using Xunit;
 namespace Google.Search.UITests
 {
     [SuppressMessage("ReSharper", "UnusedMember.Global")]
-    public class SearchChromeTests : SearchCrossBrowserTests
+    public sealed class SearchChromeTests : SearchCrossBrowserTests
     {
         public SearchChromeTests() : base("Chrome")
         {}
     }
 
     [SuppressMessage("ReSharper", "UnusedMember.Global")]
-    public class SearchFirefoxTests : SearchCrossBrowserTests
+    public sealed class SearchFirefoxTests : SearchCrossBrowserTests
     {
         public SearchFirefoxTests() : base("Firefox")
         { }
     }
 
     [SuppressMessage("ReSharper", "UnusedMember.Global")]
-    public class SearchPhantomJsTests : SearchCrossBrowserTests
+    public sealed class SearchPhantomJsTests : SearchCrossBrowserTests
     {
         public SearchPhantomJsTests() : base("PhantomJS")
         { }
@@ -66,7 +66,7 @@ namespace Google.Search.UITests
             if (tm.Browser.GetType() == typeof(PhantomJSDriver))
             {
                 // PhantomJS and Google do NOT get along.
-                Assert.True(tm.Browser.Title.Contains(searchString));
+                Assert.Contains(searchString, tm.Browser.Title);
             }
             else
             {

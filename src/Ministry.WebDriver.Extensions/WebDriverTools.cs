@@ -16,8 +16,8 @@ namespace Ministry.WebDriver.Extensions
     /// <summary>
     /// Extension methods to enhance the available tools for writing WebDriver tests.
     /// </summary>
-    [SuppressMessage("ReSharper", "MemberCanBePrivate.Global")]
-    [SuppressMessage("ReSharper", "UnusedMember.Global")]
+    [SuppressMessage("ReSharper", "MemberCanBePrivate.Global", Justification = "Library")]
+    [SuppressMessage("ReSharper", "UnusedMember.Global", Justification = "Library")]
     public static class WebDriverTools
     {
         #region | Browser |
@@ -30,7 +30,7 @@ namespace Ministry.WebDriver.Extensions
         /// <returns>
         /// The implementation of IWebDriver for the specified string.
         /// </returns>
-        /// <exception cref="System.ArgumentNullException">The parameter is null.</exception>
+        /// <exception cref="ArgumentNullException">The parameter is null.</exception>
         public static IWebDriver GetBrowser(string browserName, BrowserOptions options = null)
             => GetBrowser(GetBrowserType(browserName), options);
 
@@ -42,31 +42,21 @@ namespace Ministry.WebDriver.Extensions
         /// <returns>
         /// The implementation of IWebDriver for the specified string.
         /// </returns>
-        /// <exception cref="System.ArgumentNullException">The parameter is null.</exception>
+        /// <exception cref="ArgumentNullException">The parameter is null.</exception>
         public static IWebDriver GetBrowser(Type browserType, BrowserOptions options = null)
         {
             if (browserType == typeof(PhantomJSDriver))
-            {
                 return GetPhantomJSBrowser(options);
-            }
             if (browserType == typeof(ChromeDriver))
-            {
                 return GetChromeBrowser();
-            }
             if (browserType == typeof(EdgeDriver))
-            {
                 return GetEdgeBrowser();
-            }
             if (browserType == typeof(InternetExplorerDriver))
-            {
                 return GetInternetExplorerBrowser();
-            }
             if (browserType == typeof(FirefoxDriver))
-            {
                 return GetFirefoxBrowser();
-            }
 
-            throw new ArgumentException(nameof(browserType), $"The specified browser type {browserType} is not supported.");
+            throw new ArgumentException($"The specified browser type {browserType} is not supported.", nameof(browserType));
         }
 
         /// <summary>

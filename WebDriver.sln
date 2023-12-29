@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F6693BA7-F759-4E12-B905-D7F3C269F748}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{64516FA8-C41E-4741-B3BC-12793EC508C9}"
+	ProjectSection(SolutionItems) = preProject
+		test\Directory.Build.props = test\Directory.Build.props
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ministry.WebDriver.Extensions", "src\Ministry.WebDriver.Extensions\Ministry.WebDriver.Extensions.csproj", "{CC580301-F651-40EC-B0A3-1648B75AF40B}"
 EndProject
@@ -24,6 +27,13 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Google.Search.UIAutomation", "sample\Google.Search.UIAutomation\Google.Search.UIAutomation.csproj", "{7BF27BC4-C0B1-45DB-BABE-029EE6EE9363}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Google.Search.UITests", "sample\Google.Search.UITests\Google.Search.UITests.csproj", "{2B4374E2-18EA-4BFE-B7EF-FCE4A09B26B5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "items", "items", "{44240B5D-8588-410D-AB13-334965DEBA12}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+		LICENSE = LICENSE
+		src\Directory.Build.props = src\Directory.Build.props
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

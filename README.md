@@ -38,9 +38,15 @@ The following links relate to all of the key elements within the project technol
 - [Visual Studio Community](https://www.visualstudio.com/downloads/)
 - [XUnit](http://xunit.github.io/docs/getting-started-dotnet-core)
 
-## The Ministry of Technology Open Source Products ##
-Welcome to The Ministry of Technology open source products. All open source Ministry of Technology products are distributed under the MIT License for maximum re-usability. Details on more of our products and services can be found on our website at http://www.minotech.co.uk
+## Upgrading v3.x to v4.x
+v4 no longer supports older .net Framework versions.
 
+## Tests & Samples
+A lot of the tests in the code repo don't run anymore (The nature of a changing web!) If anyone wants to get these running again that would be appreciated.
+This is a big project and could do with some collaborators.
+
+## The Ministry of Technology Open Source Products
+Welcome to The Ministry of Technology open source products. All open source Ministry of Technology products are distributed under the MIT License for maximum re-usability.
 Our other open source repositories can be found here...
 
 * [https://github.com/ministryotech](https://github.com/ministryotech)
@@ -55,4 +61,4 @@ You can download the package for this project from any of the following package 
 If you would like to contribute to the project, please contact me.
 
 ### Who do I talk to? ###
-* Keith Jackson - keith@minotech.co.uk
+* Keith Jackson - temporal-net@live.co.uk

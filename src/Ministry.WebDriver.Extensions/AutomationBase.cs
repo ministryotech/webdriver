@@ -6,8 +6,12 @@ using OpenQA.Selenium;
 
 namespace Ministry.WebDriver.Extensions
 {
-    [SuppressMessage("ReSharper", "MemberCanBePrivate.Global")]
-    [SuppressMessage("ReSharper", "UnusedAutoPropertyAccessor.Global")]
+    /// <summary>
+    /// Represents a base class for automated components.
+    /// </summary>
+    /// <seealso cref="IElementInterrogator"/>
+    [SuppressMessage("ReSharper", "MemberCanBePrivate.Global", Justification = "Library")]
+    [SuppressMessage("ReSharper", "UnusedAutoPropertyAccessor.Global", Justification = "Library")]
     public abstract class AutomationBase : IElementInterrogator
     {
         #region | Construction |

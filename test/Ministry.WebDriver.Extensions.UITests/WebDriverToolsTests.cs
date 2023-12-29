@@ -1,7 +1,5 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
-using System.Threading;
 using Google.Search.UIAutomation;
 using OpenQA.Selenium;
 using Xunit;
@@ -14,8 +12,10 @@ namespace Ministry.WebDriver.Extensions.UITests
     /// <remarks>
     /// These are E2E Tests on the library itself.
     /// </remarks>
-    [SuppressMessage("ReSharper", "UnusedMember.Global")]
-    public class WebDriverToolsTests : IDisposable
+    [SuppressMessage("ReSharper", "UnusedMember.Global", Justification = "Test Class")]
+    [SuppressMessage("ReSharper", "UnusedType.Global", Justification = "Test Class")]
+    [SuppressMessage("Usage", "CA2201:Do not raise reserved exception types")]
+    public sealed class WebDriverToolsTests : IDisposable
     {
         private TestManager tm;
 
@@ -30,9 +30,10 @@ namespace Ministry.WebDriver.Extensions.UITests
             {
                 tm.Browser.CloseAndQuit();
             }
-            // ReSharper disable once RedundantEmptyFinallyBlock
-            finally
-            { }
+            catch
+            {
+                // Do nothing
+            }
         }
 
         #endregion
